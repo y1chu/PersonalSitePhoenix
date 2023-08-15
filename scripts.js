@@ -24,6 +24,18 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         lastScrollTop = currentScroll;
+
+        let scrollPercentage = (window.scrollY) / (document.documentElement.scrollHeight - window.innerHeight);
+
+        // Calculate the gradient end color, starting from #ff7043 and moving towards #d43f00
+        let r = Math.floor(255 - (scrollPercentage * (255 - 212)));
+        let g = Math.floor(112 - (scrollPercentage * 112));
+        let b = Math.floor(67 - (scrollPercentage * 67));
+
+        let newColor = `rgb(${r},${g},${b})`;
+        document.querySelector(".content-wrapper").style.background = `linear-gradient(to bottom, #ff7043, ${newColor})`;
+
+
     }, false);
 
 

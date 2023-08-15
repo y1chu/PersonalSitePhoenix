@@ -3,14 +3,15 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #ff7043;
+    background: linear-gradient(to bottom, #ff7043, #3e0000);
     color: #fff;
     height: 100%;
     overflow-x: hidden;
 }
 
+
 header {
-    background: linear-gradient(135deg, #ff7043, #d43f00);
+    /* background: linear-gradient(135deg, #ff7043, #d43f00); */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -101,7 +102,7 @@ p, li {
 
 
 header {
-    background: linear-gradient(135deg, #ff7043, #d43f00);
+    /* background: linear-gradient(135deg, #ff7043, #d43f00); */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -109,19 +110,19 @@ header {
 }
 
 #about {
-    background: linear-gradient(135deg, #d43f00, #bf360c);
+    /* background: linear-gradient(135deg, #d43f00, #bf360c); */
 }
 
 #experience {
-    background: linear-gradient(135deg, #bf360c, #8c0000);
+    /* background: linear-gradient(135deg, #bf360c, #8c0000); */
 }
 
 #projects {
-    background: linear-gradient(135deg, #8c0000, #610000);
+    /* background: linear-gradient(135deg, #8c0000, #610000); */
 }
 
 #contact {
-    background: linear-gradient(135deg, #610000, #3e0000);
+    /* background: linear-gradient(135deg, #610000, #3e0000); */
     display: flex;
     flex-direction: column;  /* Stack everything vertically */
     align-items: center;     /* Center items horizontally */
@@ -198,6 +199,7 @@ a:hover, button:hover {
     height: 100%;
     z-index: 1;
     pointer-events: none;
+    background: transparent;
 }
 
 .social-icons {
@@ -271,3 +273,31 @@ a:hover, button:hover {
     margin: 0 auto;   /* Center the paragraph if needed */
 }
 
+
+@keyframes burningEffect {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    /* background: linear-gradient(135deg, #ff7043, #d43f00); */
+    background-size: 200% 200%;
+    animation: burningEffect 5s infinite;
+}
+
+
+.main-container{
+    position: relative;
+    z-index: 0;
+}
+
+.navbar, .social-icons, .vertical-email {
+    z-index: 2;
+}

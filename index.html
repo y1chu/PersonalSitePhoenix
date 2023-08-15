@@ -8,94 +8,107 @@
     <script src="particles.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,300&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-<div id="particles-js"></div>
+<div class="main-container">
+    <div id="particles-js"></div>
+    <div class="navbar">
+        <a class="nav-link" href="#home"><i class="fa fa-home" aria-hidden="true"></i></a>
+        <a class="nav-link" href="#about"><i class="fa fa-user" aria-hidden="true"></i></a>
+        <a class="nav-link" href="#experience"><i class="fa fa-briefcase" aria-hidden="true"></i></a>
+        <a class="nav-link" href="#projects"><i class="fa fa-folder-open" aria-hidden="true"></i></a>
+        <a class="nav-link" href="#contact"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+    </div>
 
-<div class="navbar">
-    <a class="nav-link" href="#home"><i class="fa fa-home" aria-hidden="true"></i></a>
-    <a class="nav-link" href="#about"><i class="fa fa-user" aria-hidden="true"></i></a>
-    <a class="nav-link" href="#experience"><i class="fa fa-briefcase" aria-hidden="true"></i></a>
-    <a class="nav-link" href="#projects"><i class="fa fa-folder-open" aria-hidden="true"></i></a>
-    <a class="nav-link" href="#contact"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+    <div class="social-icons">
+        <a href="https://www.youtube.com/channel/UCgW0O1BlHVrl1WfIZ6rG0Aw" target="_blank" class="social-icon">
+            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ying-chen-chu/" target="_blank" class="social-icon">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/y1chu" target="_blank" class="social-icon">
+            <i class="fa fa-github" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <a href="mailto:y1chu@ucsd.edu" class="vertical-email">y1chu@ucsd.edu</a>
+
+    <header id="home">
+        <p class="intro-greeting">Hi, my name is</p>
+        <h1 class="intro-name">Ingrid Chu.</h1>
+        <p class="intro-description">I play games, and I make them.</p>
+        <p class="intro-detail">I'm a software engineer with a passion for both code and Final Fantasy (X is my
+            favorite!). Proudly holding a degree in Math and Computer Science from UC San Diego, I strive to blend my
+            analytical skills with my love for digital creativity.</p>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-content">
+            <h2><i class="icon-fire"></i> About Me</h2>
+            <p>My experience includes assisting in courses related to Video Game Programming and Game AI Design, and the
+                ongoing development of AnimKit, an advanced animation toolkit for Unity. Proficient in multiple
+                programming languages, including Python, C++, Java, and C#, I am passionate about software development
+                and prepared to apply my diverse skillset in a dynamic game developer role.</p>
+            <h3>Skills</h3>
+            <ul>
+                <li>Programming Languages: Python, C, C++, Java, C#</li>
+                <li>Operating Systems: Understanding of Various Operating Systems</li>
+                <li>Version Control: Git</li>
+                <li>Data Analysis: R, Matlab</li>
+            </ul>
+        </div>
+        <div class="section-image-container">
+            <img alt="A photo representing About" class="section-image" src="Source%20Images/placeholder.png"/>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-content">
+            <h2>Experience</h2>
+            <p>Worked on developing and optimizing game mechanics using Unity. Collaborated with a team of designers and
+                artists to bring game concepts to life.</p>
+            <p>Designed and implemented game AI logic for various characters. Utilized machine learning to enhance
+                character behaviors and realism.</p>
+        </div>
+        <div class="section-image-container">
+            <img alt="A photo representing Experience" class="section-image" src="Source%20Images/placeholder.png"/>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-content">
+            <h2>Projects</h2>
+            <p>An advanced animation toolkit for Unity. Enables game developers to create fluid and dynamic animations
+                with ease.</p>
+            <p>A platform for sharing and collaborating on game AI designs and strategies. Features forums, articles,
+                and tutorials from industry professionals.</p>
+        </div>
+        <div class="section-image-container">
+            <img alt="A photo representing Projects" class="section-image" src="Source%20Images/placeholder.png"/>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h5>What’s Next?</h5>
+        <h1>Get In Touch</h1>
+        <p class="contact-description">
+            Whether you'd like to debate which Final Fantasy reigns supreme, have questions about FFXIV, or are
+            interested in working together, I'd love to hear from you! Feel free to reach out to me via email or
+            LinkedIn.
+        </p>
+        <a href="mailto:y1chu@ucsd.edu" class="contact-link"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact
+            Me!</a>
+    </section>
 </div>
-
-<div class="social-icons">
-    <a href="https://www.youtube.com/channel/UCgW0O1BlHVrl1WfIZ6rG0Aw" target="_blank" class="social-icon">
-        <i class="fa fa-youtube-play" aria-hidden="true"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/ying-chen-chu/" target="_blank" class="social-icon">
-        <i class="fa fa-linkedin" aria-hidden="true"></i>
-    </a>
-    <a href="https://github.com/y1chu" target="_blank" class="social-icon">
-        <i class="fa fa-github" aria-hidden="true"></i>
-    </a>
-</div>
-
-<a href="mailto:y1chu@ucsd.edu" class="vertical-email">y1chu@ucsd.edu</a>
-
-<header id="home">
-    <p class="intro-greeting">Hi, my name is</p>
-    <h1 class="intro-name">Ingrid Chu.</h1>
-    <p class="intro-description">I play games, and I make them.</p>
-    <p class="intro-detail">I'm a software engineer with a passion for both code and Final Fantasy (X is my favorite!). Proudly holding a degree in Math and Computer Science from UC San Diego, I strive to blend my analytical skills with my love for digital creativity.</p>
-</header>
-
-<!-- About Section -->
-<section id="about">
-    <div class="section-content">
-        <h2><i class="icon-fire"></i> About Me</h2>
-        <p>My experience includes assisting in courses related to Video Game Programming and Game AI Design, and the ongoing development of AnimKit, an advanced animation toolkit for Unity. Proficient in multiple programming languages, including Python, C++, Java, and C#, I am passionate about software development and prepared to apply my diverse skillset in a dynamic game developer role.</p>
-        <h3>Skills</h3>
-        <ul>
-            <li>Programming Languages: Python, C, C++, Java, C#</li>
-            <li>Operating Systems: Understanding of Various Operating Systems</li>
-            <li>Version Control: Git</li>
-            <li>Data Analysis: R, Matlab</li>
-        </ul>
-    </div>
-    <div class="section-image-container">
-        <img alt="A photo representing About" class="section-image" src="Source%20Images/placeholder.png"/>
-    </div>
-</section>
-
-<!-- Experience Section -->
-<section id="experience">
-    <div class="section-content">
-        <h2>Experience</h2>
-        <p>Worked on developing and optimizing game mechanics using Unity. Collaborated with a team of designers and artists to bring game concepts to life.</p>
-        <p>Designed and implemented game AI logic for various characters. Utilized machine learning to enhance character behaviors and realism.</p>
-    </div>
-    <div class="section-image-container">
-        <img alt="A photo representing Experience" class="section-image" src="Source%20Images/placeholder.png"/>
-    </div>
-</section>
-
-<!-- Projects Section -->
-<section id="projects">
-    <div class="section-content">
-        <h2>Projects</h2>
-        <p>An advanced animation toolkit for Unity. Enables game developers to create fluid and dynamic animations with ease.</p>
-        <p>A platform for sharing and collaborating on game AI designs and strategies. Features forums, articles, and tutorials from industry professionals.</p>
-    </div>
-    <div class="section-image-container">
-        <img alt="A photo representing Projects" class="section-image" src="Source%20Images/placeholder.png"/>
-    </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact">
-    <h5>What’s Next?</h5>
-    <h1>Get In Touch</h1>
-    <p class="contact-description">
-        Whether you'd like to debate which Final Fantasy reigns supreme, have questions about FFXIV, or are interested in working together, I'd love to hear from you! Feel free to reach out to me via email or LinkedIn.
-    </p>
-    <a href="mailto:y1chu@ucsd.edu" class="contact-link"><i class="fa fa-envelope-o" aria-hidden="true"></i>  Contact Me!</a>
-</section>
-
 <script src="scripts.js"></script>
 </body>
 </html>
