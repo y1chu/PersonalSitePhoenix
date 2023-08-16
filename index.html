@@ -17,53 +17,54 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,300&family=Press+Start+2P&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <div class="main-container">
+
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+            <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </svg>
+
+
     <div class="navbar-container">
-        <a class="nav-link" href="#home">
-            <i aria-hidden="true" class="custom-phoenix-icon">
-            </i>
-        </a>
+        <div class="phoenix-container">
+            <a class="nav-link" href="#home">
+                <img src="Source%20Images/phoenix_icon.png" class="custom-phoenix-icon" alt="Phoenix Icon">
+            </a>
+            <div id="phoenix-particles"></div>
+        </div>
+        <div class="progress-bar">
+
+            <div class="progress-fill">
+
+        </div>
+
+        </div>
+        <div class="icons-container">
+            <i class="section-icon fa fa-user" data-section="#about"></i>
+            <i class="section-icon fa fa-briefcase" data-section="#experience"></i>
+            <i class="section-icon fa fa-coffee" data-section="#projects"></i>
+            <i class="section-icon fa fa-envelope" data-section="#contact"></i>
+        </div>
 
         <div id="current-section-wrapper">
-            <span id="current-section-1" class="section-text"></span>
+            <span id="current-section-1" class="section-text">Home</span>
             <span id="current-section-2" class="section-text"></span>
         </div>
 
-        <div class="progress-bar">
-            <div class="progress-fill"></div>
-        </div>
-
-        <div class="progress-bar">
-            <div class="progress-fill">
-            </div>
-            <i class="fa fa-home debuff-icon" data-section="#home">
-            </i>
-            <i class="fa fa-user debuff-icon" data-section="#about">
-            </i>
-            <i class="fa fa-briefcase debuff-icon" data-section="#experience">
-            </i>
-            <i class="fa fa-folder-open debuff-icon" data-section="#projects">
-            </i>
-            <i class="fa fa-envelope debuff-icon" data-section="#contact">
-            </i>
-        </div>
     </div>
     <!-- Progress Bar -->
     <div class="progress-bar">
         <div class="progress-fill">
         </div>
-        <i class="fa fa-home debuff-icon" data-section="#home">
-        </i>
-        <i class="fa fa-user debuff-icon" data-section="#about">
-        </i>
-        <i class="fa fa-briefcase debuff-icon" data-section="#experience">
-        </i>
-        <i class="fa fa-folder-open debuff-icon" data-section="#projects">
-        </i>
-        <i class="fa fa-envelope debuff-icon" data-section="#contact">
-        </i>
+
     </div>
     <div id="particles-js">
     </div>
@@ -86,7 +87,7 @@
     </a>
     <header id="home">
         <p class="intro-greeting">
-            Hi, my name is
+            Hello there! I'm
         </p>
         <h1 class="intro-name">
             Ingrid Chu.

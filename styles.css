@@ -355,20 +355,6 @@ header {
     transition: width 1s ease;
 }
 
-.debuff-icon {
-    position: fixed;
-    top: 50px;
-    font-size: 20px;
-    color: moccasin;
-    transition: color 1s ease;
-    margin-right: 5%;
-}
-
-/* To indicate the active section */
-.debuff-icon.active {
-    color: red;
-}
-
 .custom-phoenix-icon {
     top: 10px;
     position: fixed;
@@ -379,4 +365,58 @@ header {
     background-size: cover;
     z-index: 5;
 }
+
+.section-icon {
+    position: fixed;
+    top: 120px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    z-index: 1004;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.section-icon:hover {
+    color: rgba(134,197,230,255)/* Change the icon color to yellow on hover */
+}
+
+
+.icons-container .section-icon:nth-child(1) {
+    left: 170px;
+}
+
+.icons-container .section-icon:nth-child(2) {
+    left: 220px;
+}
+
+.icons-container .section-icon:nth-child(3) {
+    left: 270px;
+}
+
+.icons-container .section-icon:nth-child(4) {
+    left: 320px;
+}
+
+.section-icon.active {
+    opacity: 1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.phoenix-container {
+    position: relative;
+    display: inline-block;
+}
+
+@keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.custom-phoenix-icon:hover {
+    animation: wave 2s infinite;
+}
+
 

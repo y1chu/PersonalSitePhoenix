@@ -11,7 +11,16 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    let lastSectionName = "";
+    const sectionIcons = document.querySelectorAll('.icons-container .section-icon');
+    sectionIcons.forEach(icon => {
+        icon.addEventListener('click', function() {
+            const targetSection = document.querySelector(this.getAttribute('data-section'));
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+
+    let lastSectionName = "Home";
     let isUsingFirstText = true;
 
     window.addEventListener("scroll", function() {
@@ -32,6 +41,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const debuffIcons = document.querySelectorAll('.debuff-icon');
         debuffIcons.forEach(icon => {
+            if (icon.getAttribute('data-section') === currentSection) {
+                icon.classList.add('active');
+            } else {
+                icon.classList.remove('active');
+            }
+        });
+
+        // Update active section icon
+        const sectionIcons = document.querySelectorAll('.section-icon');
+        sectionIcons.forEach(icon => {
             if (icon.getAttribute('data-section') === currentSection) {
                 icon.classList.add('active');
             } else {
@@ -75,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
     }
+
 
     // Particles.js configuration for fiery background effect
     particlesJS('particles-js', {
@@ -178,4 +198,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         retina_detect: true
     });
+
 });
+
+
