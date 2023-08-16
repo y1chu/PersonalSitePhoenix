@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+
     // Event listener for smooth scrolling
     const navLinks = document.querySelectorAll('.nav-link');
 
@@ -10,34 +11,60 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    let lastScrollTop = 0;
+    let lastSectionName = "";
+    let isUsingFirstText = true;
 
     window.addEventListener("scroll", function() {
-        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        let scrollPercentage = (window.scrollY) / (document.documentElement.scrollHeight - window.innerHeight);
+        const progressBar = document.querySelector('.progress-fill');
+        progressBar.style.width = `${scrollPercentage * 100}%`;
 
-        if (currentScroll > lastScrollTop) {
-            // User is scrolling down
-            document.querySelector(".navbar").classList.add("hide-navbar");
-        } else {
-            // User is scrolling up
-            document.querySelector(".navbar").classList.remove("hide-navbar");
+        // Update active debuff icon
+        const sections = ['#home', '#about', '#experience', '#projects', '#contact'];
+        let currentSection = sections[0];
+        for (let section of sections) {
+            const elem = document.querySelector(section);
+            const rect = elem.getBoundingClientRect();
+            if (rect.top < window.innerHeight / 2) {
+                currentSection = section;
+            }
         }
 
-        lastScrollTop = currentScroll;
+        const debuffIcons = document.querySelectorAll('.debuff-icon');
+        debuffIcons.forEach(icon => {
+            if (icon.getAttribute('data-section') === currentSection) {
+                icon.classList.add('active');
+            } else {
+                icon.classList.remove('active');
+            }
+        });
 
-        let scrollPercentage = (window.scrollY) / (document.documentElement.scrollHeight - window.innerHeight);
+        let sectionTextElement1 = document.getElementById('current-section-1');
+        let sectionTextElement2 = document.getElementById('current-section-2');
+        let newSectionName = currentSection.slice(1).charAt(0).toUpperCase() + currentSection.slice(2);
 
-        // Calculate the gradient end color, starting from #ff7043 and moving towards #d43f00
+        if (lastSectionName !== newSectionName) {
+            if (isUsingFirstText) {
+                sectionTextElement1.style.opacity = 0;
+                sectionTextElement2.textContent = newSectionName;
+                sectionTextElement2.style.opacity = 1;
+            } else {
+                sectionTextElement2.style.opacity = 0;
+                sectionTextElement1.textContent = newSectionName;
+                sectionTextElement1.style.opacity = 1;
+            }
+            isUsingFirstText = !isUsingFirstText;
+            lastSectionName = newSectionName;
+        }
+
+        // Calculate the gradient end color
         let r = Math.floor(255 - (scrollPercentage * (255 - 212)));
         let g = Math.floor(112 - (scrollPercentage * 112));
         let b = Math.floor(67 - (scrollPercentage * 67));
 
         let newColor = `rgb(${r},${g},${b})`;
         document.querySelector(".content-wrapper").style.background = `linear-gradient(to bottom, #ff7043, ${newColor})`;
-
-
-    }, false);
-
+    });
 
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();

@@ -109,16 +109,35 @@ header {
     align-items: center;
 }
 
-#about {
-    /* background: linear-gradient(135deg, #d43f00, #bf360c); */
+/* Common styles for the sections you want to center */
+#about, #experience, #projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Stack children vertically */
+    height: 100vh;          /* Take up the full viewport height */
+    padding: 20px;          /* Some padding to avoid content touching the edges */
 }
 
-#experience {
-    /* background: linear-gradient(135deg, #bf360c, #8c0000); */
+.section-content {
+    flex: 1;
+    padding-right: 20px;
 }
 
-#projects {
-    /* background: linear-gradient(135deg, #8c0000, #610000); */
+.section-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.content-box {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #contact {
@@ -129,6 +148,24 @@ header {
     text-align: center;      /* Center text */
     padding: 50px 0;         /* Some padding for breathing space */
 }
+
+#current-section-wrapper {
+    position: relative;
+}
+
+.section-text {
+    flex-direction: column;
+    position: fixed;
+    top: 65px;
+    left: 135px;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+#current-section-1 {
+    opacity: 1; /* Initially visible */
+}
+
 
 .section-image {
     width: 80%;
@@ -153,14 +190,6 @@ section {
     align-items: center;
     position: relative;
     padding: 0;
-}
-
-.section-content, .section-image-container {
-    width: 45%;
-    border: none;
-    margin: 0;
-    padding: 0;
-    background: none;
 }
 
 .section-image-container img {
@@ -228,12 +257,13 @@ a:hover, button:hover {
 }
 
 .vertical-email {
+    font-family: 'Press Start 2P', cursive;
     position: fixed;       /* Fixed position */
-    top: 75%;              /* Centered vertically */
+    top: 80%;              /* Centered vertically */
     right: 30px;           /* 20px from the right edge for some spacing */
     transform: translateY(-50%) rotate(-90deg);  /* Center vertically and rotate the text */
     transform-origin: right center;  /* Pivot point for the rotation */
-    font-size: 20px;       /* Adjust as needed */
+    font-size: 10px;       /* Adjust as needed */
     color: moccasin;        /* White color for the email */
     padding: 5px 10px;     /* Some padding around the email */
     border-radius: 8px;    /* Optional: Rounded corners */
@@ -301,3 +331,52 @@ header {
 .navbar, .social-icons, .vertical-email {
     z-index: 2;
 }
+
+.progress-bar {
+    position: fixed;
+    top: 90px;
+    left: 130px;
+    width: 25%;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 1003;
+    display: flex;
+    align-items: center;
+    clip-path: polygon(0% 0%, 95% 0%, 100% 100%, 5% 100%);
+
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, mediumseagreen, rgb(218,244,19, 0.4));
+    box-shadow: 0 0 10px greenyellow;
+    /* background-color: rgb(218,244,19, 0.7); */
+    transition: width 1s ease;
+}
+
+.debuff-icon {
+    position: fixed;
+    top: 50px;
+    font-size: 20px;
+    color: moccasin;
+    transition: color 1s ease;
+    margin-right: 5%;
+}
+
+/* To indicate the active section */
+.debuff-icon.active {
+    color: red;
+}
+
+.custom-phoenix-icon {
+    top: 10px;
+    position: fixed;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    background-image: url('Source Images/phoenix_icon.png');
+    background-size: cover;
+    z-index: 5;
+}
+
