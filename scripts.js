@@ -1,101 +1,93 @@
 document.addEventListener("DOMContentLoaded", function() {
+    checkFadeInSection();
 
-    // Event listener for smooth scrolling
-    const navLinks = document.querySelectorAll('.nav-link');
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0);
+    }
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            event.preventDefault();
-            const targetSection = document.querySelector(this.getAttribute('href'));
-            targetSection.scrollIntoView({ behavior: 'smooth' });
+    function checkFadeInSection() {
+        const sections = document.querySelectorAll('.fade-in-section');
+        sections.forEach(section => {
+            if (isElementInViewport(section)) {
+                section.style.opacity = 1;
+            }
         });
-    });
+    }
 
-    const sectionIcons = document.querySelectorAll('.icons-container .section-icon');
-    sectionIcons.forEach(icon => {
-        icon.addEventListener('click', function() {
-            const targetSection = document.querySelector(this.getAttribute('data-section'));
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-        });
-    });
+    function smoothScrolling(element, event) {
+        event.preventDefault();
+        const targetSection = document.querySelector(element.getAttribute(event.target.hasAttribute('href') ? 'href' : 'data-section'));
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
 
+    // Event listeners for smooth scrolling
+    document.querySelectorAll('.nav-link, .icons-container .section-icon').forEach(el => {
+        el.addEventListener('click', (event) => smoothScrolling(el, event));
+    });
 
     let lastSectionName = "Home";
     let isUsingFirstText = true;
 
     window.addEventListener("scroll", function() {
-        let scrollPercentage = (window.scrollY) / (document.documentElement.scrollHeight - window.innerHeight);
+        checkFadeInSection();
+        const scrollPercentage = (window.scrollY) / (document.documentElement.scrollHeight - window.innerHeight);
+
+        // Progress bar update
         const progressBar = document.querySelector('.progress-fill');
         progressBar.style.width = `${scrollPercentage * 100}%`;
 
-        // Update active debuff icon
         const sections = ['#home', '#about', '#experience', '#projects', '#contact'];
         let currentSection = sections[0];
-        for (let section of sections) {
+
+        sections.forEach(section => {
             const elem = document.querySelector(section);
-            const rect = elem.getBoundingClientRect();
-            if (rect.top < window.innerHeight / 2) {
+            if (elem.getBoundingClientRect().top < window.innerHeight / 2) {
                 currentSection = section;
             }
-        }
-
-        const debuffIcons = document.querySelectorAll('.debuff-icon');
-        debuffIcons.forEach(icon => {
-            if (icon.getAttribute('data-section') === currentSection) {
-                icon.classList.add('active');
-            } else {
-                icon.classList.remove('active');
-            }
         });
 
-        // Update active section icon
-        const sectionIcons = document.querySelectorAll('.section-icon');
-        sectionIcons.forEach(icon => {
-            if (icon.getAttribute('data-section') === currentSection) {
-                icon.classList.add('active');
-            } else {
-                icon.classList.remove('active');
-            }
+        // Update icons
+        document.querySelectorAll('.debuff-icon, .section-icon').forEach(icon => {
+            icon.classList.toggle('active', icon.getAttribute('data-section') === currentSection);
         });
 
-        let sectionTextElement1 = document.getElementById('current-section-1');
-        let sectionTextElement2 = document.getElementById('current-section-2');
-        let newSectionName = currentSection.slice(1).charAt(0).toUpperCase() + currentSection.slice(2);
+        const newSectionName = currentSection.slice(1).charAt(0).toUpperCase() + currentSection.slice(2);
 
+        // Update section text
         if (lastSectionName !== newSectionName) {
-            if (isUsingFirstText) {
-                sectionTextElement1.style.opacity = 0;
-                sectionTextElement2.textContent = newSectionName;
-                sectionTextElement2.style.opacity = 1;
-            } else {
-                sectionTextElement2.style.opacity = 0;
-                sectionTextElement1.textContent = newSectionName;
-                sectionTextElement1.style.opacity = 1;
-            }
+            const sectionTextElement = document.getElementById(isUsingFirstText ? 'current-section-1' : 'current-section-2');
+            const otherSectionTextElement = document.getElementById(isUsingFirstText ? 'current-section-2' : 'current-section-1');
+
+            sectionTextElement.style.opacity = 0;
+            otherSectionTextElement.textContent = newSectionName;
+            otherSectionTextElement.style.opacity = 1;
+
             isUsingFirstText = !isUsingFirstText;
             lastSectionName = newSectionName;
         }
 
-        // Calculate the gradient end color
-        let r = Math.floor(255 - (scrollPercentage * (255 - 212)));
-        let g = Math.floor(112 - (scrollPercentage * 112));
-        let b = Math.floor(67 - (scrollPercentage * 67));
+        // Update gradient
+        const r = Math.floor(255 - (scrollPercentage * (255 - 212)));
+        const g = Math.floor(112 - (scrollPercentage * 112));
+        const b = Math.floor(67 - (scrollPercentage * 67));
 
-        let newColor = `rgb(${r},${g},${b})`;
-        document.querySelector(".content-wrapper").style.background = `linear-gradient(to bottom, #ff7043, ${newColor})`;
+        document.querySelector(".content-wrapper").style.background = `linear-gradient(to bottom, #ff7043, rgb(${r},${g},${b}))`;
+
+        // Check fade-in sections
+        checkFadeInSection();
     });
 
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
+    // Homepage fade-in
+    const homeSection = document.querySelector('#home');
+    if (homeSection) {
+        homeSection.style.opacity = 0;
+        homeSection.style.transition = 'opacity 1s ease-in-out';
+        setTimeout(() => {
+            homeSection.style.opacity = 1;
+        }, 100);
     }
-
-
     // Particles.js configuration for fiery background effect
     particlesJS('particles-js', {
         particles: {
@@ -202,3 +194,122 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get all the sections to be observed
+    const sections = document.querySelectorAll('.fade-in-section');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            } else {
+                entry.target.classList.remove('is-visible');
+            }
+        });
+    });
+
+    // Observe each section
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    checkFadeInSection();
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0);
+    }
+
+    function checkFadeInSection() {
+        const sections = document.querySelectorAll('.fade-in-section');
+        sections.forEach(section => {
+            if (isElementInViewport(section)) {
+                section.style.opacity = 1;
+            }
+        });
+    }
+
+    function smoothScrolling(element, event) {
+        event.preventDefault();
+        const targetSection = document.querySelector(element.getAttribute(event.target.hasAttribute('href') ? 'href' : 'data-section'));
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Event listeners for smooth scrolling
+    document.querySelectorAll('.nav-link, .icons-container .section-icon').forEach(el => {
+        el.addEventListener('click', (event) => smoothScrolling(el, event));
+    });
+
+    let lastSectionName = "Home";
+    let isUsingFirstText = true;
+
+    window.addEventListener("scroll", function() {
+        checkFadeInSection();
+        const scrollPercentage = (window.scrollY) / (document.documentElement.scrollHeight - window.innerHeight);
+
+        // Progress bar update
+        const progressBar = document.querySelector('.progress-fill');
+        progressBar.style.width = `${scrollPercentage * 100}%`;
+
+        const sections = ['#home', '#about', '#experience', '#projects', '#contact'];
+        let currentSection = sections[0];
+
+        sections.forEach(section => {
+            const elem = document.querySelector(section);
+            if (elem && elem.getBoundingClientRect().top < window.innerHeight / 2) {
+                currentSection = section;
+            }
+        });
+
+        // Update icons
+        document.querySelectorAll('.debuff-icon, .section-icon').forEach(icon => {
+            icon.classList.toggle('active', icon.getAttribute('data-section') === currentSection);
+        });
+
+        const newSectionName = currentSection.slice(1).charAt(0).toUpperCase() + currentSection.slice(2);
+
+        // Update section text
+        if (lastSectionName !== newSectionName) {
+            const sectionTextElement = document.getElementById(isUsingFirstText ? 'current-section-1' : 'current-section-2');
+            const otherSectionTextElement = document.getElementById(isUsingFirstText ? 'current-section-2' : 'current-section-1');
+
+            if (sectionTextElement) {
+                sectionTextElement.style.opacity = 0;
+            }
+
+            if (otherSectionTextElement) {
+                otherSectionTextElement.textContent = newSectionName;
+                otherSectionTextElement.style.opacity = 1;
+            }
+
+            isUsingFirstText = !isUsingFirstText;
+            lastSectionName = newSectionName;
+        }
+
+        // Update gradient
+        const r = Math.floor(255 - (scrollPercentage * (255 - 212)));
+        const g = Math.floor(112 - (scrollPercentage * 112));
+        const b = Math.floor(67 - (scrollPercentage * 67));
+
+        document.querySelector(".content-wrapper").style.background = `linear-gradient(to bottom, #ff7043, rgb(${r},${g},${b}))`;
+
+        // Check fade-in sections
+        checkFadeInSection();
+    });
+
+    // Homepage fade-in
+    const homeSection = document.querySelector('#home');
+    if (homeSection) {
+        homeSection.style.opacity = 0;
+        homeSection.style.transition = 'opacity 1s ease-in-out';
+        setTimeout(() => {
+            if (homeSection) {
+                homeSection.style.opacity = 1;
+            }
+        }, 100);
+    }
+});
