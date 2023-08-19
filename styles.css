@@ -7,8 +7,8 @@ body {
     color: #fff;
     height: 100%;
     overflow-x: hidden;
-    z-index: 0;  /* This ensures the gradient is above the images but below the particles */
-    position: relative;  /* Needed for z-index to work */
+    z-index: 0;
+    position: relative;
 }
 
 
@@ -18,9 +18,9 @@ header {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Aligns items to the start (left for column direction) */
-    flex-direction: column;  /* Stack items vertically */
-    padding-left: 20px;      /* Adds some spacing from the left edge */
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 20px;
 }
 
 
@@ -33,7 +33,7 @@ header {
 .intro-name {
     font-size: 50px;
     font-weight: bold;
-    color: gold;  /* Change the color to gold */
+    color: gold;
     margin-bottom: 10px;
 }
 
@@ -64,18 +64,18 @@ p, li {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    position: fixed;        /* Make navbar fixed */
-    top: 10px;              /* Place navbar 10px from the top */
-    right: 10px;            /* Place navbar 10px from the right */
+    position: fixed;
+    top: 10px;
+    right: 10px;
     flex-direction: column;
     align-items: flex-end;
-    z-index: 1001;          /* Ensure it's above other content */
-    border-radius: 8px;     /* Optional: to give the container rounded corners */
+    z-index: 1001;
+    border-radius: 8px;
     transition: transform 1s ease;
 }
 
 .hide-navbar {
-    transform: translateX(100%); /* Move the navbar to the left out of view */
+    transform: translateX(100%);
 }
 
 .navbar a {
@@ -84,7 +84,7 @@ p, li {
     text-decoration: none;
     margin: 0 10px;
     padding: 15px 5px;
-    transition: color 0.3s ease;  /* Only transition the color */
+    transition: color 0.3s ease;
 }
 
 .navbar a:hover {
@@ -95,12 +95,12 @@ p, li {
 
 
 .nav-link i {
-    font-size: 20px;  /* Adjust the icon size */
-    color: moccasin;  /* Icon color */
+    font-size: 20px;
+    color: moccasin;
 }
 
 .nav-link:hover i {
-    color: #ff7f00;  /* Change icon color on hover */
+    color: #ff7f00;
 }
 
 
@@ -112,7 +112,6 @@ header {
     align-items: center;
 }
 
-/* Common styles for the sections you want to center */
 #about, #experience, #projects {
     opacity: 0;
     transition: opacity 5s ease-out;
@@ -120,9 +119,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Stack children vertically */
-    height: 100vh;          /* Take up the full viewport height */
-    padding: 20px;          /* Some padding to avoid content touching the edges */
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
 }
 
 .section-content {
@@ -563,7 +562,7 @@ html {
 #experience #job-list {
     list-style-type: none;
     margin-left: 0;
-    padding-left: 25px;
+    padding-left: 20px;
     border-left: 2px solid #f5f5f5; /* Whitish color for border */
 }
 
@@ -588,12 +587,21 @@ html {
     }
 }
 
-/* Initially set the content to be transparent */
 #job-description {
+    margin-left: -100px; /* Move the content closer to the list by decreasing its left margin */
+    margin-top: -50px;
     opacity: 0;
-    animation-name: fadeIn;
+    transition: opacity 1s ease-in-out;
     animation-duration: 0.5s; /* Adjust duration as needed */
     animation-fill-mode: forwards;
+    height: 400px; /* Adjust this value based on your content */
+    overflow-y: auto; /* Makes the content scrollable if it exceeds the height */
+    position: relative; /* Ensure it is positioned relative to its parent */
+}
+
+.show-description {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
 }
 
 
@@ -602,7 +610,7 @@ html {
     font-size: 0.8em;
     display: block;
     margin-bottom: 10px;
-    color: #f5f5f5; /* Whitish for job duration */
+    color: gold; /* Whitish for job duration */
 }
 
 /* Job description styling */
@@ -615,3 +623,44 @@ html {
 
 
 
+
+.selected-experience {
+    color: gold;  /* You can choose any other color if you prefer */
+    font-weight: bold;
+}
+
+/* Initial state of job description (hidden and moved to the right) */
+#job-description.inactive {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+/* Active state of job description (visible and in its original position) */
+#job-description.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#job-description {
+    opacity: 0;
+    transform: translateX(10%);
+    transition: opacity 0.5s, transform 0.5s;
+    display: none;
+}
+
+#job-description.showing {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+#job-description.default-content {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#job-list {
+    width: 30%;  /* Increased width for the experience list */
+}
