@@ -38,7 +38,3 @@ Enjoy the fiery journey!
 ## Feedback and Contributions
 
 If you have suggestions or find any bugs, please submit an issue. Contributions are welcome! Please fork the repository and create a pull request with your changes.
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
