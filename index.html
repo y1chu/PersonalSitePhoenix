@@ -12,11 +12,19 @@
     <link href="Source%20Images/phoenix_icon.png" rel="icon" type="image/x-icon"/>
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,300&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,300&amp;display=swap"
+          rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,300&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,300&family=Press+Start+2P&display=swap"
+          rel="stylesheet">
+    <link rel="preload" href="Source Images/BG/1.jpg" as="image">
+    <link rel="preload" href="Source Images/BG/2.jpg" as="image">
+    <link rel="preload" href="Source Images/BG/3.jpg" as="image">
+    <link rel="preload" href="Source Images/BG/4.jpg" as="image">
+    <link rel="preload" href="Source Images/BG/5.jpg" as="image">
+    <link rel="preload" href="Source Images/BG/6.jpg" as="image">
 
 </head>
 <body>
@@ -97,87 +105,96 @@
             I play games, and I make them.
         </p>
         <p class="intro-detail">
-            I'm a software engineer with a passion for both code and Final Fantasy (X is my
-            favorite!). Proudly holding a degree in Math and Computer Science from UC San Diego, I strive to blend my
-            analytical skills with my love for digital creativity.
+            I'm a software engineer with a B.S. in Mathematics and Computer Science from UC San Diego. Skilled in
+            Unity game development and backed by expertise in C#, C++, I bridge the gap between tech and
+            artistry, inspired by gaming legends like Final Fantasy X.
         </p>
     </header>
 
 
-    <!-- About Section -->
     <section id="about" class="fade-in-section">
         <div class="content-box">
             <div class="section-content">
                 <h2>
-                    <i class="icon-fire">
-                    </i>
+                    <i class="icon-fire"></i>
                     About Me
                 </h2>
                 <p>
-                    My experience includes assisting in courses related to Video Game Programming and Game AI Design, and the
-                    ongoing development of AnimKit, an advanced animation toolkit for Unity. Proficient in multiple
-                    programming languages, including Python, C++, Java, and C#, I am passionate about software development
-                    and prepared to apply my diverse skillset in a dynamic game developer role.
+                    Hello! I'm Ingrid Chu. Navigating the world of computer science, I've always been drawn to the
+                    intersection of innovation and impactful solutions. My journey took root at UC San Diego, where I
+                    not only honed my skills but also engaged in dynamic projects that challenged the boundaries of
+                    traditional development.
                 </p>
-                <h3>
-                    Skills
-                </h3>
-                <ul>
-                    <li>
-                        Programming Languages: Python, C, C++, Java, C#
-                    </li>
-                    <li>
-                        Operating Systems: Understanding of Various Operating Systems
-                    </li>
-                    <li>
-                        Version Control: Git
-                    </li>
-                    <li>
-                        Data Analysis: R, Matlab
-                    </li>
-                </ul>
+                <p>
+                    Over the years, I've had the opportunity to delve into various facets of tech, from robust
+                    application development to understanding the nuances of game-inspired programming. With each
+                    project, I carry forward my commitment to quality and a vision of merging tech with creativity. As
+                    the digital landscape continually evolves, I'm excited about the boundless opportunities that lie
+                    ahead.
+                </p>
+                <h3>Some technologies I’ve been working with recently:</h3>
+                <div class="skills-grid">
+                    <ul>
+                        <li>Python</li>
+                        <li>C, C++, C#</li>
+                        <li>Java</li>
+                        <li>HTML, CSS, JS</li>
+                        <li>Unity</li>
+                    </ul>
+                </div>
             </div>
             <div class="section-image-container">
-                <img alt="A photo representing About" class="section-image" src="Source%20Images/placeholder.png"/>
+                <img alt="A photo representing About" class="section-image" src="Source%20Images/Me.jpg"/>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+
     <section id="experience" class="fade-in-section">
         <div class="content-box">
             <div class="section-content">
                 <h2>
-                    Experience
+                    Where I've Worked
                 </h2>
-                <p>
-                    Worked on developing and optimizing game mechanics using Unity. Collaborated with a team of designers and
-                    artists to bring game concepts to life.
-                </p>
-                <p>
-                    Designed and implemented game AI logic for various characters. Utilized machine learning to enhance
-                    character behaviors and realism.
-                </p>
-            </div>
-            <div class="section-image-container">
-                <img alt="A photo representing Experience" class="section-image" src="Source%20Images/placeholder.png"/>
+                <div style="display: flex;">
+                    <!-- Job List (Left Side) -->
+                    <div style="flex: 1; padding-right: 20px;">
+                        <ul id="job-list">
+                            <li data-job="unity">Unity Developer</li>
+                            <li data-job="tutor">Computer Science Teacher's Assistant</li>
+                            <li data-job="cosmos">COSMOS Cluster Assistant</li>
+                        </ul>
+                    </div>
+                    <!-- Job Details (Right Side) -->
+                    <div style="flex: 2;" id="job-description">
+                        <h3>Unity Developer <span>@ Play Meow</span></h3>
+                        <p><small>Aug 2023 - Present</small></p>
+                        <p>Led the transformation of game data from PlayMeow's editor to Unity, enabling the execution of 2D visual novel games.</p>
+                        <p>Developed the mobile game interface tailored for visual novels, optimizing game effects and rendering within Unity.</p>
+                        <p>Authored modular and extensible code for future feature integrations and ensured seamless third-party package integration.</p>
+                        <p>Employed Unity's tools and Git version control practices to enhance game capabilities and maintain code integrity.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
 
     <!-- Projects Section -->
     <section id="projects" class="fade-in-section">
         <div class="content-box">
             <div class="section-content">
                 <h2>
-                    Projects
+                    Some Stuff I've Built
                 </h2>
                 <p>
-                    An advanced animation toolkit for Unity. Enables game developers to create fluid and dynamic animations
+                    An advanced animation toolkit for Unity. Enables game developers to create fluid and dynamic
+                    animations
                     with ease.
                 </p>
                 <p>
-                    A platform for sharing and collaborating on game AI designs and strategies. Features forums, articles,
+                    A platform for sharing and collaborating on game AI designs and strategies. Features forums,
+                    articles,
                     and tutorials from industry professionals.
                 </p>
             </div>
@@ -186,7 +203,6 @@
             </div>
         </div>
     </section>
-
 
 
     <!-- Contact Section -->

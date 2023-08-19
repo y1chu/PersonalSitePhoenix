@@ -209,8 +209,33 @@ section {
 
 .section-image-container img {
     max-width: 100%;
-    max-height: 300px;
+    height: auto;
+    object-fit: cover;
 }
+
+.skills-grid ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    list-style-type: none;  /* We'll use pseudo-elements for the dots */
+    padding: 0;
+}
+
+.skills-grid li {
+    position: relative;
+    padding-left: 1.5em;  /* This space will accommodate the custom dot */
+}
+
+.skills-grid li::before {
+    content: "•";  /* This is the dot */
+    position: absolute;
+    left: 0;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 3em;  /* Adjust the size of the dot if needed */
+    color: white;  /* Color of the dot; adjust as required */
+}
+
 
 a:hover, button:hover {
     animation: flareUp 0.5s forwards;
@@ -442,20 +467,9 @@ html {
     animation: changeHue 5s infinite;
 }
 
-
-
 .fade-in-section {
     opacity: 0;
     transition: opacity 1s ease-out;
-}
-
-@keyframes changeBackground {
-    0%   { background-image: url('Source Images/BG/1.jpg'); }
-    20%  { background-image: url('Source Images/BG/2.jpg'); }
-    40%  { background-image: url('Source Images/BG/3.jpg'); }
-    60% { background-image: url('Source Images/BG/4.jpg'); }
-    80% { background-image: url('Source Images/BG/5.jpg'); }
-    100% { background-image: url('Source Images/BG/1.jpg'); }
 }
 
 .background-rotator {
@@ -466,9 +480,137 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;  /* This value should be less than body's z-index */
+    z-index: -1;
     background-size: cover;
-    animation: changeBackground 60s infinite;
+    animation: changeBackground 144s infinite;  /* Adjusted time to accommodate the fades */
+    background-image: url('Source Images/BG/1.jpg');
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+@keyframes changeBackground {
+    0%, 8.3% {
+        background-image: url('Source Images/BG/1.jpg');
+        opacity: 0.1;
+    }
+    8.3%, 16.6% {
+        background-image: url('Source Images/BG/2.jpg');
+        opacity: 0.1;
+    }
+    16.6%, 25% {
+        background-image: url('Source Images/BG/3.jpg');
+        opacity: 0.1;
+    }
+    25%, 33.3% {
+        background-image: url('Source Images/BG/4.jpg');
+        opacity: 0.1;
+    }
+    33.3%, 41.6% {
+        background-image: url('Source Images/BG/5.jpg');
+        opacity: 0.1;
+    }
+    41.6%, 50% {
+        background-image: url('Source Images/BG/6.jpg');
+        opacity: 0.1;
+    }
+
+    /* Fade Out Section - mirror the above but in reverse */
+    50%, 58.3% {
+        background-image: url('Source Images/BG/6.jpg');
+        opacity: 0.1;
+    }
+    58.3%, 66.6% {
+        background-image: url('Source Images/BG/5.jpg');
+        opacity: 0.1;
+    }
+    66.6%, 75% {
+        background-image: url('Source Images/BG/4.jpg');
+        opacity: 0.1;
+    }
+    75%, 83.3% {
+        background-image: url('Source Images/BG/3.jpg');
+        opacity: 0.1;
+    }
+    83.3%, 91.6% {
+        background-image: url('Source Images/BG/2.jpg');
+        opacity: 0.1;
+    }
+    91.6%, 100% {
+        background-image: url('Source Images/BG/1.jpg');
+        opacity: 0.1;
+    }
+}
+
+/* Styling for the list items in the experience section */
+#experience #job-list li {
+    cursor: pointer;
+    padding: 5px 0;
+    transition: background-color 0.3s, color 0.3s;
+    color: rgba(204,214,246,255) /* Gray for non-selected jobs */
+}
+
+/* Highlight the selected job in the list */
+#experience #job-list li.active {
+    color: #ffeb3b; /* Soft Yellow for the selected job */
+    font-weight: bold;
+}
+
+#experience #job-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Remove bullet points for the job list items and add vertical line */
+#experience #job-list {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 25px;
+    border-left: 2px solid #f5f5f5; /* Whitish color for border */
+}
+
+/* Job title styling */
+#job-description h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+    color: #f5f5f5; /* Whitish for job titles */
+}
+
+#job-description h3 span {
+    color: rgba(89,230,199,255);  /* Soft Yellow color, as an example */
+}
+
+/* Define the fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Initially set the content to be transparent */
+#job-description {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 0.5s; /* Adjust duration as needed */
+    animation-fill-mode: forwards;
+}
+
+
+/* Job duration styling */
+#job-description small {
+    font-size: 0.8em;
+    display: block;
+    margin-bottom: 10px;
+    color: #f5f5f5; /* Whitish for job duration */
+}
+
+/* Job description styling */
+#job-description p {
+    margin-top: 10px;
+    position: relative;
+    padding-left: 15px;
+    color: #f5f5f5; /* Whitish for descriptions */
 }
 
 

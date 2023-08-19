@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     checkFadeInSection();
 
     function isElementInViewport(el) {
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function smoothScrolling(element, event) {
         event.preventDefault();
         const targetSection = document.querySelector(element.getAttribute(event.target.hasAttribute('href') ? 'href' : 'data-section'));
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+        targetSection.scrollIntoView({behavior: 'smooth'});
     }
 
     // Event listeners for smooth scrolling
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let lastSectionName = "Home";
     let isUsingFirstText = true;
 
-    window.addEventListener("scroll", function() {
+    window.addEventListener("scroll", function () {
         checkFadeInSection();
         const scrollPercentage = (window.scrollY) / (document.documentElement.scrollHeight - window.innerHeight);
 
@@ -194,8 +194,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Get all the sections to be observed
     const sections = document.querySelectorAll('.fade-in-section');
 
@@ -215,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     checkFadeInSection();
 
     function isElementInViewport(el) {
@@ -236,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function smoothScrolling(element, event) {
         event.preventDefault();
         const targetSection = document.querySelector(element.getAttribute(event.target.hasAttribute('href') ? 'href' : 'data-section'));
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+        targetSection.scrollIntoView({behavior: 'smooth'});
     }
 
     // Event listeners for smooth scrolling
@@ -247,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let lastSectionName = "Home";
     let isUsingFirstText = true;
 
-    window.addEventListener("scroll", function() {
+    window.addEventListener("scroll", function () {
         checkFadeInSection();
         const scrollPercentage = (window.scrollY) / (document.documentElement.scrollHeight - window.innerHeight);
 
@@ -312,4 +311,44 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }, 100);
     }
+});
+
+// Function to update the job description
+function updateJobDescription(jobKey) {
+    const descriptionDiv = document.getElementById('job-description');
+    if (descriptionDiv && jobDescriptions[jobKey]) {
+        descriptionDiv.innerHTML = jobDescriptions[jobKey];
+    }
+}
+
+const jobDescriptions = {
+    'unity': `
+        <h3>Unity Developer <span>@ Play Meow</span></h3>
+        <p><small>Aug 2023 - Present</small></p>
+        <p>Led the transformation of game data from PlayMeow's editor to Unity, enabling the execution of 2D visual novel games.</p>
+        <p>Developed the mobile game interface tailored for visual novels, optimizing game effects and rendering within Unity.</p>
+        <p>Authored modular and extensible code for future feature integrations and ensured seamless third-party package integration.</p>
+        <p>Employed Unity's tools and Git version control practices to enhance game capabilities and maintain code integrity.</p>
+    `,
+    'tutor': `
+        <h3>Computer Science Teacher's Assistant <span>@ UC San Diego</span></h3>
+        <p><small>Sep 2021 - Present</small></p>
+        <p>Assisted instructors in proctoring exams, grading quizzes and programming assignments, and addressing student inquiries on the Piazza class forum.</p>
+        <p>Conducted lab sessions to support students in debugging Java code and navigating the Unix command line.</p>
+        <p>Facilitated review sessions and discussions for over 300 students to prepare for quizzes and weekly programming assignments.</p>
+    `,
+    'cosmos': `
+        <h3>COSMOS Cluster Assistant <span>@ UC San Diego</span></h3>
+        <p><small>Jun 2023 - Aug 2023</small></p>
+        <p>Collaborated with the COSMOS cluster lead faculty to support the implementation of academic course content during the COSMOS Summer 2023 program. <\p>
+        <p>Assisted with lab experiences and provided essential support to lead faculty members. <\p>
+        <p>Coordinated with COSMOS Program representatives to ensure smooth execution of assigned cluster courses, including content delivery and resource management.<\p>
+    `
+};
+
+// Add event listeners for job list items
+document.querySelectorAll('#job-list li').forEach(li => {
+    li.addEventListener('click', function () {
+        updateJobDescription(li.getAttribute('data-job'));
+    });
 });
