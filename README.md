@@ -1,4 +1,4 @@
-# [Ingrid Chu's Portfolio Website](https://y1chu.github.io/Phoenix/)
+# Ingrid Chu's Portfolio Website
 
 Welcome to the repository for my personal portfolio website. As someone with a deep appreciation for Final Fantasy and its themes, I've always resonated with the idea of rebirth and transformation. This theme is reflected in both the design and purpose of this site. 
 
