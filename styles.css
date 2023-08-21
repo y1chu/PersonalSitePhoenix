@@ -2,7 +2,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 0;
+    /* padding: 0 0 500px 0; /* Added 500px padding to the bottom */
     background: linear-gradient(to bottom, #ff7043, #3e0000);
     color: #fff;
     height: 100%;
@@ -10,6 +10,7 @@ body {
     z-index: 0;
     position: relative;
 }
+
 
 
 
@@ -59,51 +60,6 @@ p, li {
     font-weight: 300;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    flex-direction: column;
-    align-items: flex-end;
-    z-index: 1001;
-    border-radius: 8px;
-    transition: transform 1s ease;
-}
-
-.hide-navbar {
-    transform: translateX(100%);
-}
-
-.navbar a {
-    display: block;
-    color: moccasin;
-    text-decoration: none;
-    margin: 0 10px;
-    padding: 15px 5px;
-    transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-    color: #ffff00;
-    background-color: transparent;
-    animation: none;
-}
-
-
-.nav-link i {
-    font-size: 20px;
-    color: moccasin;
-}
-
-.nav-link:hover i {
-    color: #ff7f00;
-}
-
-
 header {
     /* background: linear-gradient(135deg, #ff7043, #d43f00); */
     height: 100vh;
@@ -147,6 +103,7 @@ header {
 
 #contact {
     /* background: linear-gradient(135deg, #610000, #3e0000); */
+    margin-top: 2000px;
     opacity: 0;
     transition: opacity 5s ease-out;
     will-change: opacity;
@@ -236,21 +193,8 @@ section {
 }
 
 
-a:hover, button:hover {
-    animation: flareUp 0.5s forwards;
-}
 
-@keyframes flareUp {
-    0% {
-        box-shadow: none;
-    }
-    50% {
-        box-shadow: 0 0 15px 5px #ff4500;
-    }
-    100% {
-        box-shadow: none;
-    }
-}
+
 
 .icon-fire {
     font-size: 24px;
@@ -621,9 +565,6 @@ html {
     color: #f5f5f5; /* Whitish for descriptions */
 }
 
-
-
-
 .selected-experience {
     color: gold;  /* You can choose any other color if you prefer */
     font-weight: bold;
@@ -663,4 +604,163 @@ html {
 
 #job-list {
     width: 30%;  /* Increased width for the experience list */
+}
+
+.project {
+    padding-top: 2100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* This ensures the content starts at the top of the flex container */
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.project-wrapper {
+    position: relative;
+    /* width: 1200px; */ /* Commenting out or removing this fixed width */
+    margin: 100px auto; /* Using 'auto' for left and right margins to center the content */
+    display: flex;
+    align-items: center;
+}
+
+
+.project-image {
+    width: 600px; /* Adjust the width of the image if needed */
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    margin-left: 50px; /* Space between the image and the card for projects 1 and 3 */
+}
+
+.project2 .project-image {
+    margin-left: 0;
+    margin-right: 50px; /* Space between the image and the card for project 2 */
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    z-index: 1;
+    width: 500px;
+    padding: 15px;
+    border: 1px solid #ff7043;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.project-card p {
+    margin-bottom: 10px;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: #ffeb3b;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.project-card a:hover {
+    color: palevioletred;
+}
+
+#projects .section-content {
+    position: relative; /* Changed from absolute to relative */
+    z-index: 1;
+}
+
+#projects h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+#experience {
+    z-index: 10;
+    position: relative;
+}
+
+.noteworthy-projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px; /* spacing between the main projects and this section */
+}
+
+.projects-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap; /* wraps to the next line if the container width is too small */
+}
+
+.noteworthy-card {
+    width: 200px;
+    height: 200px;
+    padding: 100px; /* Adjusted padding */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start; /* Align content to the left */
+    position: relative;
+}
+
+.noteworthy-card h4 {
+    margin-top: -50px;  /* Adjust this value as needed */
+    margin-bottom: 10px;  /* Adjust this value as needed */
+    text-align: left;
+    width: 100%;
+}
+
+.noteworthy-card p {
+    margin-top: 10px;  /* Adjust this value as needed */
+    margin-bottom: 10px;  /* Adjust this value as needed */
+    text-align: left;
+    width: 100%;
+}
+
+
+.github-icon {
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.github-icon:hover {
+    color: yellow;
+}
+
+.tech-labels {
+    position: absolute;
+    font-family: 'Inconsolata', monospace;
+    font-size: 15px; /* Adjust font size as needed */
+    text-align: left; /* Center the labels horizontally */
+    margin-top: 220px; /* Add margin to separate from the description */
+}
+
+.tech-label {
+    margin: 2px; /* Adjust spacing between labels */
+    padding: 3px 6px; /* Add padding for aesthetic */
+    color: yellowgreen; /* Text color for labels */
+    border-radius: 3px; /* Rounded corners for labels */
 }
