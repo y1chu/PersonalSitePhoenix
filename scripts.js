@@ -221,7 +221,7 @@ function updateJobDescription(jobKey) {
 
 const jobDescriptions = {
     'unity': `
-        <h3>Unity Developer <span>@ Play Meow</span></h3>
+        <h3>Software Engineer <span>@ Play Meow</span></h3>
         <p><small>Aug 2023 - Present</small></p>
         <p>Led the transformation of game data from PlayMeow's editor to Unity, enabling the execution of 2D visual novel games.</p>
         <p>Developed the mobile game interface tailored for visual novels, optimizing game effects and rendering within Unity.</p>
