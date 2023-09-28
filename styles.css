@@ -307,7 +307,7 @@ header {
 }
 
 .navbar, .social-icons, .vertical-email {
-    z-index: 2;
+    z-index: 10;
 }
 
 .progress-bar {
@@ -473,6 +473,7 @@ html {
 
 #experience {
     padding-bottom: 200px;  /* Added space at the bottom of the 'experience' section */
+    z-index: 2;
 }
 
 /* Styling for the list items in the experience section */
