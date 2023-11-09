@@ -769,3 +769,57 @@ html {
 .project-wrapper {
     margin-bottom: 50px;  /* Add space between each project wrapper */
 }
+
+/* Mobile Styles */
+@media only screen and (max-width: 768px) {
+    .content-wrapper {
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin-bottom: 10px;
+    }
+
+    h1, h2, h3, p {
+        font-size: 0.9em;
+    }
+
+    #job-list li {
+        font-size: 0.8em;
+    }
+
+    #job-description {
+        font-size: 0.8em;
+    }
+}
+
+#copyright-notice {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+#copyright-text {
+    flex: 1;
+    text-align: center;
+}
+#close-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}

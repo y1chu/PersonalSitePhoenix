@@ -287,3 +287,7 @@ document.addEventListener("DOMContentLoaded", function() {
     updateHighlightedExperience();
     updateJobDescription('unity'); // This will set the default description to "Play Meow"
 });
+
+document.getElementById('close-btn').onclick = function() {
+    document.getElementById('copyright-notice').style.display = 'none';
+};
