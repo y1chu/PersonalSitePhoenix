@@ -223,6 +223,7 @@ const jobDescriptions = {
     'unity': `
         <h3>Software Engineer <span>@ Play Meow</span></h3>
         <p><small>Aug 2023 - Present</small></p>
+        <p>Project based on <a href="https://acgcreator.com" target="_blank" rel="noopener noreferrer" style="color: rgba(89, 230, 199);">ACGCreator.com</a>, currently under development and translation into mobile format.</p>
         <p>Led the transformation of game data from PlayMeow's editor to Unity, enabling the execution of 2D visual novel games.</p>
         <p>Developed the mobile game interface tailored for visual novels, optimizing game effects and rendering within Unity.</p>
         <p>Authored modular and extensible code for future feature integrations and ensured seamless third-party package integration.</p>
