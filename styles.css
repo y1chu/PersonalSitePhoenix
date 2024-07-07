@@ -17,6 +17,8 @@ header {
     align-items: flex-start;
     flex-direction: column;
     padding-left: 20px;
+    background-size: 200% 200%;
+    animation: burningEffect 5s infinite;
 }
 
 .intro-greeting {
@@ -44,13 +46,16 @@ header {
     max-width: 600px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 600;
     margin-top: 0;
     margin-bottom: 15px;
 }
 
-p, li {
+p,
+li {
     font-weight: 300;
 }
 
@@ -66,7 +71,9 @@ header {
     z-index: 3;
 }
 
-#about, #experience, #projects {
+#about,
+#experience,
+#projects {
     opacity: 0;
     transition: opacity 5s ease-out;
     will-change: opacity;
@@ -100,13 +107,14 @@ header {
 }
 
 #contact {
-    padding-top: 50px;
+    padding-top: 600px;
+    /* Increase padding to add space above the contact section */
+    padding-bottom: 50px;
+    /* Add some padding at the bottom */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 50px 0;
-    margin-top: 50px;  /* Adjusted margin-top for the 'contact' section */
 }
 
 #home {
@@ -129,7 +137,8 @@ header {
 }
 
 #current-section-1 {
-    opacity: 1; /* Initially visible */
+    opacity: 1;
+    /* Initially visible */
 }
 
 
@@ -168,23 +177,28 @@ section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    list-style-type: none;  /* We'll use pseudo-elements for the dots */
+    list-style-type: none;
+    /* We'll use pseudo-elements for the dots */
     padding: 0;
 }
 
 .skills-grid li {
     position: relative;
-    padding-left: 1.5em;  /* This space will accommodate the custom dot */
+    padding-left: 1.5em;
+    /* This space will accommodate the custom dot */
 }
 
 .skills-grid li::before {
-    content: "•";  /* This is the dot */
+    content: "•";
+    /* This is the dot */
     position: absolute;
     left: 0;
     top: 40%;
     transform: translateY(-50%);
-    font-size: 3em;  /* Adjust the size of the dot if needed */
-    color: white;  /* Color of the dot; adjust as required */
+    font-size: 3em;
+    /* Adjust the size of the dot if needed */
+    color: white;
+    /* Color of the dot; adjust as required */
 }
 
 
@@ -211,13 +225,17 @@ section {
 
 .social-icons {
     position: fixed;
-    bottom: 25px;          /* Adjusted from 10px to 20px for more spacing from the bottom */
-    left: 25px;            /* Adjusted from 10px to 20px for more spacing from the left */
+    bottom: 25px;
+    /* Adjusted from 10px to 20px for more spacing from the bottom */
+    left: 25px;
+    /* Adjusted from 10px to 20px for more spacing from the left */
     display: flex;
     flex-direction: column;
     z-index: 1001;
-    padding: 10px;         /* Added padding around the container */
-    border-radius: 8px;    /* Optional: Rounded corners */
+    padding: 10px;
+    /* Added padding around the container */
+    border-radius: 8px;
+    /* Optional: Rounded corners */
 }
 
 .social-icon {
@@ -226,7 +244,8 @@ section {
     text-decoration: none;
     font-size: 24px;
     transition: color 0.3s ease;
-    padding: 5px;          /* Added padding for individual icons */
+    padding: 5px;
+    /* Added padding for individual icons */
 }
 
 .social-icon:hover {
@@ -236,16 +255,26 @@ section {
 
 .vertical-email {
     font-family: 'Press Start 2P', cursive;
-    position: fixed;       /* Fixed position */
-    top: 80%;              /* Centered vertically */
-    right: 30px;           /* 20px from the right edge for some spacing */
-    transform: translateY(-50%) rotate(-90deg);  /* Center vertically and rotate the text */
-    transform-origin: right center;  /* Pivot point for the rotation */
-    font-size: 10px;       /* Adjust as needed */
-    color: moccasin;        /* White color for the email */
-    padding: 5px 10px;     /* Some padding around the email */
-    border-radius: 8px;    /* Optional: Rounded corners */
-    z-index: 1001;         /* Ensure it's above other content */
+    position: fixed;
+    /* Fixed position */
+    top: 80%;
+    /* Centered vertically */
+    right: 30px;
+    /* 20px from the right edge for some spacing */
+    transform: translateY(-50%) rotate(-90deg);
+    /* Center vertically and rotate the text */
+    transform-origin: right center;
+    /* Pivot point for the rotation */
+    font-size: 10px;
+    /* Adjust as needed */
+    color: moccasin;
+    /* White color for the email */
+    padding: 5px 10px;
+    /* Some padding around the email */
+    border-radius: 8px;
+    /* Optional: Rounded corners */
+    z-index: 1001;
+    /* Ensure it's above other content */
 }
 
 .vertical-email:hover {
@@ -253,8 +282,10 @@ section {
     animation: none;
 }
 
-#contact h2, #contact h3 {
-    margin-bottom: 20px;    /* Space between headings and content */
+#contact h2,
+#contact h3 {
+    margin-bottom: 20px;
+    /* Space between headings and content */
 }
 
 .contact-link {
@@ -266,19 +297,25 @@ section {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    font-weight: bold;      /* Make the text bold */
-    letter-spacing: 1px;    /* Space out the letters a bit */
+    font-weight: bold;
+    /* Make the text bold */
+    letter-spacing: 1px;
+    /* Space out the letters a bit */
 }
 
 .contact-link:hover {
     background-color: #ff4500;
-    transform: scale(1.05);  /* Slight scaling effect on hover */
+    transform: scale(1.05);
+    /* Slight scaling effect on hover */
 }
 
 .contact-description {
-    text-align: left;  /* Align the text to the left */
-    max-width: 30%;   /* Limit the width to 60% */
-    margin: 0 auto;   /* Center the paragraph if needed */
+    text-align: left;
+    /* Align the text to the left */
+    max-width: 30%;
+    /* Limit the width to 60% */
+    margin: 0 auto;
+    /* Center the paragraph if needed */
 }
 
 
@@ -286,9 +323,11 @@ section {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -301,12 +340,14 @@ header {
 }
 
 
-.main-container{
+.main-container {
     position: relative;
     z-index: 0;
 }
 
-.navbar, .social-icons, .vertical-email {
+.navbar,
+.social-icons,
+.vertical-email {
     z-index: 10;
 }
 
@@ -325,14 +366,16 @@ header {
 }
 
 .phoenix-link {
-    text-decoration: none; /* Removes underline */
-    display: inline-block; /* Makes it inline but block-level */
+    text-decoration: none;
+    /* Removes underline */
+    display: inline-block;
+    /* Makes it inline but block-level */
 }
 
 .progress-fill {
     height: 100%;
     width: 0%;
-    background: linear-gradient(to right, mediumseagreen, rgb(218,244,19, 0.4));
+    background: linear-gradient(to right, mediumseagreen, rgb(218, 244, 19, 0.4));
     box-shadow: 0 0 10px greenyellow;
     /* background-color: rgb(218,244,19, 0.7); */
     transition: width 1s ease;
@@ -394,11 +437,31 @@ html {
 }
 
 @keyframes changeHue {
-    0% { filter: hue-rotate(0deg); } /* Starts at red #ff0000 */
-    25% { filter: hue-rotate(30deg); } /* Approximates #ff7f00 */
-    50% { filter: hue-rotate(60deg); } /* Approximates #ffff00 */
-    75% { filter: hue-rotate(90deg); } /* Approximates #7fff00 */
-    100% { filter: hue-rotate(0deg); } /* Loop back to the starting red */
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    /* Starts at red #ff0000 */
+    25% {
+        filter: hue-rotate(30deg);
+    }
+
+    /* Approximates #ff7f00 */
+    50% {
+        filter: hue-rotate(60deg);
+    }
+
+    /* Approximates #ffff00 */
+    75% {
+        filter: hue-rotate(90deg);
+    }
+
+    /* Approximates #7fff00 */
+    100% {
+        filter: hue-rotate(0deg);
+    }
+
+    /* Loop back to the starting red */
 }
 
 .custom-phoenix-icon:hover {
@@ -420,60 +483,85 @@ html {
     height: 100%;
     z-index: -1;
     background-size: cover;
-    animation: changeBackground 144s infinite;  /* Adjusted time to accommodate the fades */
+    animation: changeBackground 144s infinite;
+    /* Adjusted time to accommodate the fades */
     background-image: url('Source Images/BG/1.jpg');
     transform: translateZ(0);
     will-change: transform;
 }
 
 @keyframes changeBackground {
-    0%, 10% {
+
+    0%,
+    10% {
         background-image: url('Source Images/BG/1.jpg');
         opacity: 0.1;
     }
-    10%, 20% {
+
+    10%,
+    20% {
         background-image: url('Source Images/BG/2.jpg');
         opacity: 0.1;
     }
-    20%, 30% {
+
+    20%,
+    30% {
         background-image: url('Source Images/BG/3.jpg');
         opacity: 0.1;
     }
-    30%, 40% {
+
+    30%,
+    40% {
         background-image: url('Source Images/BG/4.jpg');
         opacity: 0.1;
     }
-    40%, 50% {
+
+    40%,
+    50% {
         background-image: url('Source Images/BG/5.jpg');
         opacity: 0.1;
     }
 
     /* Fade Out Section - mirror the above but in reverse */
-    50%, 60% {
+    50%,
+    60% {
         background-image: url('Source Images/BG/5.jpg');
         opacity: 0.1;
     }
-    60%, 70% {
+
+    60%,
+    70% {
         background-image: url('Source Images/BG/4.jpg');
         opacity: 0.1;
     }
-    70%, 80% {
+
+    70%,
+    80% {
         background-image: url('Source Images/BG/3.jpg');
         opacity: 0.1;
     }
-    80%, 90% {
+
+    80%,
+    90% {
         background-image: url('Source Images/BG/2.jpg');
         opacity: 0.1;
     }
-    90%, 100% {
+
+    90%,
+    100% {
         background-image: url('Source Images/BG/1.jpg');
         opacity: 0.1;
     }
 }
 
+
+
+
 #experience {
-    padding-bottom: 200px;  /* Added space at the bottom of the 'experience' section */
-    z-index: 2;
+    position: relative;
+    z-index: 3;
+    padding-bottom: 300px;
+    /* Adjust the z-index to be above other elements */
 }
 
 /* Styling for the list items in the experience section */
@@ -481,12 +569,14 @@ html {
     cursor: pointer;
     padding: 5px 0;
     transition: background-color 0.3s, color 0.3s;
-    color: rgba(204,214,246,255) /* Gray for non-selected jobs */
+    color: rgba(204, 214, 246, 255);
+    /* Gray for non-selected jobs */
 }
 
 /* Highlight the selected job in the list */
 #experience #job-list li.active {
-    color: #ffeb3b; /* Soft Yellow for the selected job */
+    color: #ffeb3b;
+    /* Soft Yellow for the selected job */
     font-weight: bold;
 }
 
@@ -494,23 +584,32 @@ html {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Remove bullet points for the job list items and add vertical line */
+/* Remove bullet points and add vertical line */
 #experience #job-list {
     list-style-type: none;
+    /* Remove bullet points */
     margin-left: 0;
     padding-left: 20px;
-    border-left: 2px solid #f5f5f5; /* Whitish color for border */
+    border-left: 2px solid #f5f5f5;
+    /* Add vertical line */
+}
+
+#experience #job-description {
+    position: relative;
+    z-index: 3;
 }
 
 /* Job title styling */
 #job-description h3 {
     font-size: 1.5em;
     margin-top: 0;
-    color: #f5f5f5; /* Whitish for job titles */
+    color: #f5f5f5;
+    /* Whitish for job titles */
 }
 
 #job-description h3 span {
-    color: rgba(89,230,199,255);  /* Soft Yellow color, as an example */
+    color: rgba(89, 230, 199, 255);
+    /* Soft Yellow color, as an example */
 }
 
 /* Define the fade-in animation */
@@ -518,21 +617,27 @@ html {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
 
 #job-description {
-    margin-left: -100px; /* Move the content closer to the list by decreasing its left margin */
+    margin-left: -100px;
+    /* Move the content closer to the list by decreasing its left margin */
     margin-top: -50px;
     opacity: 0;
     transition: opacity 1s ease-in-out;
-    animation-duration: 0.5s; /* Adjust duration as needed */
+    animation-duration: 0.5s;
+    /* Adjust duration as needed */
     animation-fill-mode: forwards;
-    height: 400px; /* Adjust this value based on your content */
-    overflow-y: auto; /* Makes the content scrollable if it exceeds the height */
-    position: relative; /* Ensure it is positioned relative to its parent */
+    height: 400px;
+    /* Adjust this value based on your content */
+    overflow-y: auto;
+    /* Makes the content scrollable if it exceeds the height */
+    position: relative;
+    /* Ensure it is positioned relative to its parent */
 }
 
 .show-description {
@@ -540,13 +645,13 @@ html {
     transition: opacity 0.5s ease-in;
 }
 
-
 /* Job duration styling */
 #job-description small {
     font-size: 0.8em;
     display: block;
     margin-bottom: 10px;
-    color: gold; /* Whitish for job duration */
+    color: gold;
+    /* Whitish for job duration */
 }
 
 /* Job description styling */
@@ -554,11 +659,13 @@ html {
     margin-top: 10px;
     position: relative;
     padding-left: 15px;
-    color: #f5f5f5; /* Whitish for descriptions */
+    color: #f5f5f5;
+    /* Whitish for descriptions */
 }
 
 .selected-experience {
-    color: gold;  /* You can choose any other color if you prefer */
+    color: gold;
+    /* You can choose any other color if you prefer */
     font-weight: bold;
 }
 
@@ -587,7 +694,6 @@ html {
     transform: translateX(0);
 }
 
-
 #job-description.default-content {
     display: block;
     opacity: 1;
@@ -595,16 +701,29 @@ html {
 }
 
 #job-list {
-    width: 30%;  /* Increased width for the experience list */
+    width: 30%;
+    /* Increased width for the experience list */
+}
+
+/* Ensure no other elements overlap the experience section */
+.navbar-container,
+.social-icons,
+.vertical-email,
+#particles-js {
+    z-index: 2;
 }
 
 #projects {
-    z-index: 3;
-    padding-top: 500px;  /* Added space at the top of the 'projects' section */
-    padding-bottom: 1500px;  /* Added space at the bottom of the 'projects' section */
+    z-index: 2;
+    padding-top: 50px;
+    padding-bottom: 350px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.project > *:first-child {
+.project>*:first-child {
     margin-top: 700px;
 }
 
@@ -617,42 +736,50 @@ html {
 }
 
 .project-wrapper {
-    position: relative;
-    /* width: 1200px; */ /* Commenting out or removing this fixed width */
-    margin: 100px auto; /* Using 'auto' for left and right margins to center the content */
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 1200px;
 }
 
-
 .project-image {
-    width: 600px; /* Adjust the width of the image if needed */
+    width: 60%;
+    /* Make the image larger than the card */
+    max-width: 500px;
+    /* Limit the maximum size of the image */
     height: auto;
     display: block;
     border-radius: 8px;
-    margin-left: 50px; /* Space between the image and the card for projects 1 and 3 */
+    margin: 0 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image:hover {
+    transform: scale(1.1);
+    /* Slightly enlarge the image on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .project2 .project-image {
     margin-left: 0;
-    margin-right: 50px; /* Space between the image and the card for project 2 */
+    margin-right: 50px;
+    /* Space between the image and the card for project 2 */
 }
 
-.projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
 
 .project-card {
-    z-index: 1;
-    width: 500px;
+    flex: 1;
+    width: 30%;
+    /* Make the card smaller than the image */
     padding: 15px;
     border: 1px solid #ff7043;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    margin: 20px;
 }
 
 .project-card:hover {
@@ -682,7 +809,8 @@ html {
 }
 
 #projects .section-content {
-    position: relative; /* Changed from absolute to relative */
+    position: relative;
+    /* Changed from absolute to relative */
     z-index: 1;
 }
 
@@ -692,51 +820,59 @@ html {
 }
 
 #experience {
-    z-index: 2;
     position: relative;
+    z-index: 3;
+    /* Adjust the z-index to be above other elements */
 }
 
 .noteworthy-projects {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px; /* spacing between the main projects and this section */
+    margin-top: 100px;
+    /* Space between the main projects and this section */
 }
 
 .projects-container {
     display: flex;
-    gap: 50px;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    flex-wrap: wrap; /* wraps to the next line if the container width is too small */
+    margin-bottom: 100px;
+    /* Increased margin-bottom to add space at the bottom */
 }
 
 .noteworthy-card {
-    width: 200px;
-    height: 200px;
-    padding: 100px; /* Adjusted padding */
+    width: 300px;
+    /* Increase the width of the card */
+    padding: 20px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start; /* Align content to the left */
+    align-items: flex-start;
     position: relative;
+    margin: 10px;
 }
 
 .noteworthy-card h4 {
-    margin-top: -50px;  /* Adjust this value as needed */
-    margin-bottom: 10px;  /* Adjust this value as needed */
+    margin-top: 0;
+    /* Adjust this value as needed */
+    margin-bottom: 10px;
+    /* Adjust this value as needed */
     text-align: left;
     width: 100%;
 }
 
 .noteworthy-card p {
-    margin-top: 10px;  /* Adjust this value as needed */
-    margin-bottom: 10px;  /* Adjust this value as needed */
+    margin-top: 10px;
+    /* Adjust this value as needed */
+    margin-bottom: 10px;
+    /* Adjust this value as needed */
     text-align: left;
     width: 100%;
 }
-
 
 .github-icon {
     font-size: 24px;
@@ -752,22 +888,35 @@ html {
 }
 
 .tech-labels {
-    position: absolute;
+    width: 100%;
+    /* Ensure the labels container takes the full width of the card */
     font-family: 'Inconsolata', monospace;
-    font-size: 15px; /* Adjust font size as needed */
-    text-align: left; /* Center the labels horizontally */
-    margin-top: 220px; /* Add margin to separate from the description */
+    font-size: 15px;
+    /* Adjust font size as needed */
+    text-align: left;
+    margin-top: 10px;
+    /* Add margin to separate from the description */
 }
 
 .tech-label {
-    margin: 2px; /* Adjust spacing between labels */
-    padding: 3px 6px; /* Add padding for aesthetic */
-    color: yellowgreen; /* Text color for labels */
-    border-radius: 3px; /* Rounded corners for labels */
+    display: inline-block;
+    /* Ensure labels are inline-block */
+    margin: 2px;
+    /* Adjust spacing between labels */
+    padding: 3px 6px;
+    /* Add padding for aesthetic */
+    color: yellowgreen;
+    /* Text color for labels */
+    border-radius: 3px;
+    /* Rounded corners for labels */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Optional: Background color for better visibility */
 }
 
+
 .project-wrapper {
-    margin-bottom: 50px;  /* Add space between each project wrapper */
+    margin-bottom: 50px;
+    /* Add space between each project wrapper */
 }
 
 /* Mobile Styles */
@@ -785,7 +934,10 @@ html {
         margin-bottom: 10px;
     }
 
-    h1, h2, h3, p {
+    h1,
+    h2,
+    h3,
+    p {
         font-size: 0.9em;
     }
 
@@ -811,10 +963,12 @@ html {
     display: flex;
     align-items: center;
 }
+
 #copyright-text {
     flex: 1;
     text-align: center;
 }
+
 #close-btn {
     margin-left: auto;
     background: none;
