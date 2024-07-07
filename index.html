@@ -3,16 +3,17 @@
 
 
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>
         Ingrid Chu
     </title>
-    <link href="styles.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet" />
     <script src="particles.js"></script>
-    <link href="Source%20Images/phoenix_icon.png" rel="icon" type="image/x-icon"/>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,300&display=swap" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="Source%20Images/phoenix_icon.png" rel="icon" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,300&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap" rel="stylesheet">
     <link rel="preload" href="Source Images/BG/1.jpg" as="image">
@@ -25,278 +26,293 @@
 
 
 <body>
-<div class="background-rotator"></div>
-<div class="main-container">
+    <div class="background-rotator"></div>
+    <div class="main-container">
 
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
-        <filter id="glow">
-            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-            <feMerge>
-                <feMergeNode in="coloredBlur"/>
-                <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-        </filter>
-    </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
+                <feMerge>
+                    <feMergeNode in="coloredBlur" />
+                    <feMergeNode in="SourceGraphic" />
+                </feMerge>
+            </filter>
+        </svg>
 
 
-    <div class="navbar-container">
-        <div class="phoenix-container">
-            <a class="phoenix-link" href="#home">
-                <img src="Source%20Images/phoenix_icon.png" class="custom-phoenix-icon" alt="Phoenix Icon">
-            </a>
-            <div id="phoenix-particles"></div>
-        </div>
-        <div class="progress-bar">
-
-            <div class="progress-fill">
-
+        <div class="navbar-container">
+            <div class="phoenix-container">
+                <a class="phoenix-link" href="#home">
+                    <img src="Source%20Images/phoenix_icon.png" class="custom-phoenix-icon" alt="Phoenix Icon">
+                </a>
+                <div id="phoenix-particles"></div>
             </div>
+            <div class="progress-bar">
 
-        </div>
-        <div class="icons-container">
-            <i class="section-icon fa fa-user" data-section="#about"></i>
-            <i class="section-icon fa fa-briefcase" data-section="#experience"></i>
-            <i class="section-icon fa fa-coffee" data-section="#projects"></i>
-            <i class="section-icon fa fa-envelope" data-section="#contact"></i>
-        </div>
+                <div class="progress-fill">
 
-        <div id="current-section-wrapper">
-            <span id="current-section-1" class="section-text">Home</span>
-            <span id="current-section-2" class="section-text"></span>
-        </div>
-
-    </div>
-    <!-- Progress Bar -->
-    <div class="progress-bar">
-        <div class="progress-fill">
-        </div>
-
-    </div>
-    <div id="particles-js">
-    </div>
-    <div class="social-icons">
-        <a class="social-icon" href="https://www.youtube.com/channel/UCgW0O1BlHVrl1WfIZ6rG0Aw" target="_blank">
-            <i aria-hidden="true" class="fa fa-youtube-play">
-            </i>
-        </a>
-        <a class="social-icon" href="https://www.linkedin.com/in/ying-chen-chu/" target="_blank">
-            <i aria-hidden="true" class="fa fa-linkedin">
-            </i>
-        </a>
-        <a class="social-icon" href="https://github.com/y1chu" target="_blank">
-            <i aria-hidden="true" class="fa fa-github">
-            </i>
-        </a>
-    </div>
-    <a class="vertical-email" href="mailto:y1chu@ucsd.edu">
-        y1chu@ucsd.edu
-    </a>
-    <header id="home">
-        <p class="intro-greeting">
-            Hello there! I'm
-        </p>
-        <h1 class="intro-name">
-            Ingrid Chu.
-        </h1>
-        <p class="intro-description">
-            I play games, and I make them.
-        </p>
-        <p class="intro-detail">
-            I'm a software engineer with a B.S. in Mathematics and Computer Science from UC San Diego. Skilled in
-            Unity game development and backed by expertise in C#, C++, I bridge the gap between tech and
-            artistry, inspired by gaming legends like Final Fantasy X.
-        </p>
-    </header>
-
-    <div id="copyright-notice">
-        <span id="copyright-text">Images from Final Fantasy XVI are copyrighted and used here for illustrative purposes only. All rights reserved by Square Enix.</span>
-        <button id="close-btn">&times;</button>
-    </div>
-
-    <section id="about" class="fade-in-section">
-        <div class="content-box">
-            <div class="section-content">
-                <h2>
-                    <i class="icon-fire"></i>
-                    About Me
-                </h2>
-                <p>
-                    Hello! I'm Ingrid Chu. Navigating the world of computer science, I've always been drawn to the
-                    intersection of innovation and impactful solutions. My journey took root at UC San Diego, where I
-                    not only honed my skills but also engaged in dynamic projects that challenged the boundaries of
-                    traditional development.
-                </p>
-                <p>
-                    Over the years, I've had the opportunity to delve into various facets of tech, from robust
-                    application development to understanding the nuances of game-inspired programming. With each
-                    project, I carry forward my commitment to quality and a vision of merging tech with creativity. As
-                    the digital landscape continually evolves, I'm excited about the boundless opportunities that lie
-                    ahead.
-                </p>
-                <h3>Some technologies I’ve been working with recently:</h3>
-                <div class="skills-grid">
-                    <ul>
-                        <li>Python</li>
-                        <li>C, C++, C#</li>
-                        <li>Java</li>
-                        <li>HTML, CSS, JS</li>
-                        <li>Unity</li>
-                    </ul>
                 </div>
+
             </div>
-            <div class="section-image-container">
-                <img alt="A photo representing About" class="section-image" src="Source%20Images/Me.jpg"/>
+            <div class="icons-container">
+                <i class="section-icon fa fa-user" data-section="#about"></i>
+                <i class="section-icon fa fa-briefcase" data-section="#experience"></i>
+                <i class="section-icon fa fa-coffee" data-section="#projects"></i>
+                <i class="section-icon fa fa-envelope" data-section="#contact"></i>
             </div>
+
+            <div id="current-section-wrapper">
+                <span id="current-section-1" class="section-text">Home</span>
+                <span id="current-section-2" class="section-text"></span>
+            </div>
+
         </div>
-    </section>
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill">
+            </div>
 
+        </div>
+        <div id="particles-js">
+        </div>
+        <div class="social-icons">
+            <a class="social-icon" href="https://www.youtube.com/channel/UCgW0O1BlHVrl1WfIZ6rG0Aw" target="_blank">
+                <i aria-hidden="true" class="fa fa-youtube-play">
+                </i>
+            </a>
+            <a class="social-icon" href="https://www.linkedin.com/in/ying-chen-chu/" target="_blank">
+                <i aria-hidden="true" class="fa fa-linkedin">
+                </i>
+            </a>
+            <a class="social-icon" href="https://github.com/y1chu" target="_blank">
+                <i aria-hidden="true" class="fa fa-github">
+                </i>
+            </a>
+        </div>
+        <a class="vertical-email" href="mailto:y1chu@ucsd.edu">
+            y1chu@ucsd.edu
+        </a>
+        <header id="home">
+            <p class="intro-greeting">
+                Hello there! I'm
+            </p>
+            <h1 class="intro-name">
+                Ingrid Chu.
+            </h1>
+            <p class="intro-description">
+                I play games, and I make them.
+            </p>
+            <p class="intro-detail">
+                I'm a software engineer with a B.S. in Mathematics and Computer Science from UC San Diego. Skilled in
+                Unity game development and backed by expertise in C#, C++, I bridge the gap between tech and
+                artistry, inspired by gaming legends like Final Fantasy X.
+            </p>
+        </header>
 
-    <section id="experience" class="fade-in-section">
-        <div class="content-box">
-            <div class="section-content">
-                <h2>
-                    Where I've Worked
-                </h2>
-                <div style="display: flex;">
-                    <!-- Job List (Left Side) -->
-                    <div style="flex: 1; padding-right: 20px;">
-                        <ul id="job-list">
-                            <li data-job="unity">Play Meow</li>
-                            <li data-job="tutor">UC San Diego</li>
-                            <li data-job="cosmos">COSMOS</li>
+        <div id="copyright-notice">
+            <span id="copyright-text">Images from Final Fantasy XVI are copyrighted and used here for illustrative
+                purposes only. All rights reserved by Square Enix.</span>
+            <button id="close-btn">&times;</button>
+        </div>
+
+        <section id="about" class="fade-in-section">
+            <div class="content-box">
+                <div class="section-content">
+                    <h2>
+                        <i class="icon-fire"></i>
+                        About Me
+                    </h2>
+                    <p>
+                        Hello! I'm Ingrid Chu. Navigating the world of computer science, I've always been drawn to the
+                        intersection of innovation and impactful solutions. My journey took root at UC San Diego, where
+                        I
+                        not only honed my skills but also engaged in dynamic projects that challenged the boundaries of
+                        traditional development.
+                    </p>
+                    <p>
+                        Over the years, I've had the opportunity to delve into various facets of tech, from robust
+                        application development to understanding the nuances of game-inspired programming. With each
+                        project, I carry forward my commitment to quality and a vision of merging tech with creativity.
+                        As
+                        the digital landscape continually evolves, I'm excited about the boundless opportunities that
+                        lie
+                        ahead.
+                    </p>
+                    <h3>Some technologies I’ve been working with recently:</h3>
+                    <div class="skills-grid">
+                        <ul>
+                            <li>Python</li>
+                            <li>C, C++, C#</li>
+                            <li>Java</li>
+                            <li>HTML, CSS, JS</li>
+                            <li>Unity</li>
                         </ul>
                     </div>
-                    <!-- Job Details (Right Side) -->
-                    <div style="flex: 2;" id="job-description">
-                        <h3>Unity Developer <span>@ Play Meow</span></h3>
-                        <p><small>Aug 2023 - Present</small></p>
-                        <p>Led the transformation of game data from PlayMeow's editor to Unity, enabling the execution
-                            of 2D visual novel games.</p>
-                        <p>Developed the mobile game interface tailored for visual novels, optimizing game effects and
-                            rendering within Unity.</p>
-                        <p>Authored modular and extensible code for future feature integrations and ensured seamless
-                            third-party package integration.</p>
-                        <p>Employed Unity's tools and Git version control practices to enhance game capabilities and
-                            maintain code integrity.</p>
+                </div>
+                <div class="section-image-container">
+                    <img alt="A photo representing About" class="section-image" src="Source%20Images/Me.jpg" />
+                </div>
+            </div>
+        </section>
+
+
+        <section id="experience" class="fade-in-section">
+            <div class="content-box">
+                <div class="section-content">
+                    <h2>
+                        Where I've Worked
+                    </h2>
+                    <div style="display: flex;">
+                        <!-- Job List (Left Side) -->
+                        <div style="flex: 1; padding-right: 20px;">
+                            <ul id="job-list">
+                                <li data-job="unity">Play Meow</li>
+                                <li data-job="tutor">UC San Diego</li>
+                                <li data-job="cosmos">COSMOS</li>
+                            </ul>
+                        </div>
+                        <!-- Job Details (Right Side) -->
+                        <div style="flex: 2;" id="job-description">
+                            <h3>Unity Developer <span>@ Play Meow</span></h3>
+                            <p><small>Aug 2023 - Present</small></p>
+                            <p>Led the transformation of game data from PlayMeow's editor to Unity, enabling the
+                                execution
+                                of 2D visual novel games.</p>
+                            <p>Developed the mobile game interface tailored for visual novels, optimizing game effects
+                                and
+                                rendering within Unity.</p>
+                            <p>Authored modular and extensible code for future feature integrations and ensured seamless
+                                third-party package integration.</p>
+                            <p>Employed Unity's tools and Git version control practices to enhance game capabilities and
+                                maintain code integrity.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <section id="projects" class="fade-in-section">
+            <div class="content-box">
+                <div class="section-content">
+                    <div class="project">
+                        <h2>Some Stuff I've Built</h2>
 
-    <section id="projects" class="fade-in-section">
-        <div class="content-box">
-            <div class="section-content">
-                <div class="project">
-                    <h2>Some Stuff I've Built</h2>
-
-                    <!-- Project 1 -->
-                    <div class="project-wrapper project1">
-                        <div class="project-card">
-                            <h3>AnimKit</h3>
-                            <p>A dynamic animation toolkit for Unity. Seamlessly animate game objects with features like
-                                path motion, UI & audio effects, sprite animations, and advanced event systems. Design
-                                complex animations with a visual timeline editor, blend multiple animation layers, and
-                                integrate with Unity's particle and physics systems.
-                            </p>
-                            <a href="https://github.com/y1chu/AnimKit" target="_blank">View on GitHub</a>
-                        </div>
-                        <img src="Source%20Images/AnimKitEx.png" alt="Image for AnimKit" class="project-image">
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="project-wrapper project2">
-                        <img src="Source%20Images/2DFightEx.gif" alt="Image for 2D-Fight" class="project-image">
-                        <div class="project-card">
-                            <h3>2D Fighting Game</h3>
-                            <p>Just me tinkering around in Unity, trying my hand at a 2D fighting game. It's a work in progress,
-                                so there's a lot more to come! Currently, I'm diving into the stories of characters like Scarlett,
-                                Garland, Tai, and Chroma. From village dramas to cosmic showdowns, there's a lot brewing in this universe.
-                                Stay tuned!</p>
-                            <a href="https://github.com/y1chu/2D-Fight-" target="_blank">View on GitHub</a>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="project-wrapper project3">
-                        <div class="project-card">
-                            <h3>How to Make a Discord Bot in Java YouTube Tutorials</h3>
-                            <p>A comprehensive tutorial series guiding viewers on how to develop a Discord bot using
-                                Java.
-                                Covering various aspects from bot setup, message reception, commands, member activities,
-                                to
-                                advanced features such as reactions and role management. Videos are recorded in Chinese.</p>
-                            <a href="https://github.com/y1chu/Discord-Java-Bot" target="_blank">View on GitHub</a>
-                        </div>
-                        <img src="Source%20Images/DiscordBotEx.gif" alt="Image for Discord Java Bot"
-                             class="project-image">
-                    </div>
-                </div>
-
-                <div class="noteworthy-projects">
-                    <h3>Other Smaller Projects...</h3>
-                    <div class="projects-container">
                         <!-- Project 1 -->
-                        <div class="noteworthy-card">
-                            <h4>Fortune Cookie</h4>
-                            <p>A simple web application that displays a fortune message when a user clicks on a fortune cookie image.</p>
-                            <div class="tech-labels">
-                                <span class="tech-label">HTML</span>
-                                <span class="tech-label">CSS</span>
-                                <span class="tech-label">JavaScript</span>
+                        <div class="project-wrapper">
+                            <img src="Source%20Images/AnimKitEx.png" alt="Image for AnimKit" class="project-image">
+                            <div class="project-card">
+                                <h3>AnimKit</h3>
+                                <p>A dynamic animation toolkit for Unity. Seamlessly animate game objects with features
+                                    like
+                                    path motion, UI & audio effects, sprite animations, and advanced event systems.
+                                    Design
+                                    complex animations with a visual timeline editor, blend multiple animation layers,
+                                    and
+                                    integrate with Unity's particle and physics systems.</p>
+                                <a href="https://github.com/y1chu/AnimKit" target="_blank">View on GitHub</a>
                             </div>
-                            <a href="https://github.com/y1chu/Fortune-Cookie" target="_blank">
-                                <i class="github-icon"><i class="fa fa-github"></i></i>
-                            </a>
-                        </div>
-                        <!-- [Repeat for other projects...] -->
-                        <div class="noteworthy-card">
-                            <h4>User Engagement with Clickbait</h4>
-                            <p>Explores the correlation between clickbait titles on YouTube and user engagement, specifically focusing on likes, views, and comments.</p>
-                            <div class="tech-labels">
-                                <span class="tech-label">Python</span>
-                                <span class="tech-label">Panda</span>
-                            </div>
-                            <a href="https://github.com/y1chu/User-Engagement-with-Clickbait-Youtube-Titles/" target="_blank">
-                                <i class="github-icon"><i class="fa fa-github"></i></i>
-                            </a>
                         </div>
 
-                        <div class="noteworthy-card">
-                            <h4>Web Development Course</h4>
-                            <p>A structured course in web development, focusing on fundamental technologies: HTML, CSS, and JavaScript.</p>
-                            <div class="tech-labels">
-                                <span class="tech-label">HTML</span>
-                                <span class="tech-label">CSS</span>
-                                <span class="tech-label">JavaScript</span>
+                        <!-- Project 2 -->
+                        <div class="project-wrapper">
+                            <img src="Source%20Images/2DFightEx.gif" alt="Image for 2D-Fight" class="project-image">
+                            <div class="project-card">
+                                <h3>2D Fighting Game</h3>
+                                <p>Just me tinkering around in Unity, trying my hand at a 2D fighting game. It's a work
+                                    in
+                                    progress, so there's a lot more to come! Currently, I'm diving into the stories of
+                                    characters like Scarlett, Garland, Tai, and Chroma. From village dramas to cosmic
+                                    showdowns, there's a lot brewing in this universe. Stay tuned!</p>
+                                <a href="https://github.com/y1chu/2D-Fight-" target="_blank">View on GitHub</a>
                             </div>
-                            <a href="https://github.com/y1chu/WebDev-Teaching" target="_blank">
-                                <i class="github-icon"><i class="fa fa-github"></i></i>
-                            </a>
                         </div>
 
-                        <div class="noteworthy-card">
-                            <h4>FFXIV Raid Gear Tracker (Under Update)</h4>
-                            <p>A helper website for Final Fantasy XIV teams to track their raid gear with <a href="https://etro.gg" target="_blank" rel="noopener noreferrer" style="color: rgba(89, 230, 199);">etro.gg</a>. Currently updating, please contact me if you want to know more!</p>
-                            <div class="tech-labels">
-                                <span class="tech-label">HTML</span>
-                                <span class="tech-label">CSS</span>
-                                <span class="tech-label">JavaScript</span>
+                        <!-- Project 3 -->
+                        <div class="project-wrapper">
+                            <img src="Source%20Images/DiscordBotEx.gif" alt="Image for Discord Java Bot"
+                                class="project-image">
+                            <div class="project-card">
+                                <h3>How to Make a Discord Bot in Java YouTube Tutorials</h3>
+                                <p>A comprehensive tutorial series guiding viewers on how to develop a Discord bot using
+                                    Java.
+                                    Covering various aspects from bot setup, message reception, commands, member
+                                    activities, to
+                                    advanced features such as reactions and role management. Videos are recorded in
+                                    Chinese.</p>
+                                <a href="https://github.com/y1chu/Discord-Java-Bot" target="_blank">View on GitHub</a>
                             </div>
-                            <a href="https://github.com/y1chu/XIVGearTracker" target="_blank">
-                                <i class="github-icon"><i class="fa fa-github"></i></i>
-                            </a>
                         </div>
-
                     </div>
+
+                    <<div class="noteworthy-projects">
+                        <h3>Other Smaller Projects...</h3>
+                        <div class="projects-container">
+                            <!-- Project 1 -->
+                            <div class="noteworthy-card">
+                                <h4>Fortune Cookie</h4>
+                                <p>A simple web application that displays a fortune message when a user clicks on a
+                                    fortune cookie image.</p>
+                                <div class="tech-labels">
+                                    <span class="tech-label">HTML</span>
+                                    <span class="tech-label">CSS</span>
+                                    <span class="tech-label">JavaScript</span>
+                                </div>
+                                <a href="https://github.com/y1chu/Fortune-Cookie" target="_blank">
+                                    <i class="github-icon"><i class="fa fa-github"></i></i>
+                                </a>
+                            </div>
+                            <!-- [Repeat for other projects...] -->
+                            <div class="noteworthy-card">
+                                <h4>User Engagement with Clickbait</h4>
+                                <p>Explores the correlation between clickbait titles on YouTube and user engagement,
+                                    specifically focusing on likes, views, and comments.</p>
+                                <div class="tech-labels">
+                                    <span class="tech-label">Python</span>
+                                    <span class="tech-label">Panda</span>
+                                </div>
+                                <a href="https://github.com/y1chu/User-Engagement-with-Clickbait-Youtube-Titles/"
+                                    target="_blank">
+                                    <i class="github-icon"><i class="fa fa-github"></i></i>
+                                </a>
+                            </div>
+
+                            <div class="noteworthy-card">
+                                <h4>Web Development Course</h4>
+                                <p>A structured course in web development, focusing on fundamental technologies: HTML,
+                                    CSS, and JavaScript.</p>
+                                <div class="tech-labels">
+                                    <span class="tech-label">HTML</span>
+                                    <span class="tech-label">CSS</span>
+                                    <span class="tech-label">JavaScript</span>
+                                </div>
+                                <a href="https://github.com/y1chu/WebDev-Teaching" target="_blank">
+                                    <i class="github-icon"><i class="fa fa-github"></i></i>
+                                </a>
+                            </div>
+
+                            <div class="noteworthy-card">
+                                <h4>FFXIV Raid Gear Tracker (Under Update)</h4>
+                                <p>A helper website for Final Fantasy XIV teams to track their raid gear with <a
+                                        href="https://etro.gg" target="_blank" rel="noopener noreferrer"
+                                        style="color: rgba(89, 230, 199);">etro.gg</a>. Currently updating, please
+                                    contact me if you want to know more!</p>
+                                <div class="tech-labels">
+                                    <span class="tech-label">HTML</span>
+                                    <span class="tech-label">CSS</span>
+                                    <span class="tech-label">JavaScript</span>
+                                </div>
+                                <a href="https://github.com/y1chu/XIVGearTracker" target="_blank">
+                                    <i class="github-icon"><i class="fa fa-github"></i></i>
+                                </a>
+                            </div>
+
+                        </div>
                 </div>
 
 
             </div>
-        </div>
+    </div>
     </section>
-
 
     <!-- Contact Section -->
     <section id="contact" class="fade-in-section">
@@ -312,14 +328,14 @@
             LinkedIn.
         </p>
         <a class="contact-link" href="mailto:y1chu@ucsd.edu">
-            <i aria-hidden="true" class="fa fa-envelope-o">
-            </i>
-            Contact
-            Me!
+            <i aria-hidden="true" class="fa fa-envelope-o"></i>
+            Contact Me!
         </a>
     </section>
-</div>
-<script src="scripts.js">
-</script>
+
+    </div>
+    <script src="scripts.js">
+    </script>
 </body>
+
 </html>
