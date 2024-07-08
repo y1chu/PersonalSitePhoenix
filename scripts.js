@@ -231,7 +231,7 @@ const jobDescriptions = {
     `,
     'tutor': `
         <h3>Computer Science Teacher's Assistant <span>@ UC San Diego</span></h3>
-        <p><small>Sep 2021 - Present</small></p>
+        <p><small>Sep 2021 - Mar 2024</small></p>
         <p>Assisted instructors in proctoring exams, grading quizzes and programming assignments, and addressing student inquiries on the Piazza class forum.</p>
         <p>Conducted lab sessions to support students in debugging Java code and navigating the Unix command line.</p>
         <p>Facilitated review sessions and discussions for over 300 students to prepare for quizzes and weekly programming assignments.</p>
