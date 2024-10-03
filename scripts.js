@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function smoothScrolling(element, event) {
         event.preventDefault();
         const targetSection = document.querySelector(element.getAttribute(event.target.hasAttribute('href') ? 'href' : 'data-section'));
-        targetSection.scrollIntoView({behavior: 'smooth'});
+        targetSection.scrollIntoView({ behavior: 'smooth' });
     }
 
     document.querySelectorAll('.nav-link, .icons-container .section-icon').forEach(el => {
@@ -223,11 +223,10 @@ const jobDescriptions = {
     'unity': `
         <h3>Software Engineer <span>@ Play Meow</span></h3>
         <p><small>Aug 2023 - Present</small></p>
-        <p>Project based on <a href="https://acgcreator.com" target="_blank" rel="noopener noreferrer" style="color: rgba(89, 230, 199);">ACGCreator.com</a>, currently under development and translation into mobile format.</p>
-        <p>Led the transformation of game data from PlayMeow's editor to Unity, enabling the execution of 2D visual novel games.</p>
+        <p>Project based on <a href="https://acgcreator.com" target="_blank" rel="noopener noreferrer" style="color: rgba(89, 230, 199);">ACGCreator.com</a>, currently under development and translation into mobile and web formats.</p>
         <p>Developed the mobile game interface tailored for visual novels, optimizing game effects and rendering within Unity.</p>
-        <p>Authored modular and extensible code for future feature integrations and ensured seamless third-party package integration.</p>
-        <p>Employed Unity's tools and Git version control practices to enhance game capabilities and maintain code integrity.</p>
+        <p>Frontend development using Vue.js and Nuxt 2, contributing to the web engine architecture and interface development.</p>
+        <p>Integrated Vue-based components to improve user interaction and web performance, ensuring responsive design and seamless cross-platform experience.</p>
     `,
     'tutor': `
         <h3>Computer Science Teacher's Assistant <span>@ UC San Diego</span></h3>
@@ -247,7 +246,7 @@ const jobDescriptions = {
 
 // Add event listeners for job list items
 document.querySelectorAll('#job-list li').forEach(li => {
-    li.addEventListener('click', function() {
+    li.addEventListener('click', function () {
         updateJobDescription(li.getAttribute('data-job'));
     });
 });
@@ -266,7 +265,7 @@ function updateHighlightedExperience() {
 }
 
 // Event listener to change highlighted experience on click
-document.querySelector("#job-list").addEventListener("click", function(event) {
+document.querySelector("#job-list").addEventListener("click", function (event) {
     if (event.target && event.target.nodeName === "LI") {
         const jobList = document.querySelector("#job-list");
         const experiences = jobList.querySelectorAll("li");
@@ -280,15 +279,15 @@ document.querySelector("#job-list").addEventListener("click", function(event) {
 });
 
 // Call the function on page load to set the default highlighted experience
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     updateHighlightedExperience();
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     updateHighlightedExperience();
     updateJobDescription('unity'); // This will set the default description to "Play Meow"
 });
 
-document.getElementById('close-btn').onclick = function() {
+document.getElementById('close-btn').onclick = function () {
     document.getElementById('copyright-notice').style.display = 'none';
 };
