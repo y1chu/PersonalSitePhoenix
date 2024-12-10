@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; url='https://ingridchu.netlify.app'" />
-    <title>Page Moved</title>
+    <title>Redirecting...</title>
+    <script>
+        // Check if the user is on a mobile device
+        if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            // Redirect to the mobile site
+            window.location.href = "https://mobile-ingridchu.netlify.app";
+        } else {
+            // Redirect to the web site
+            window.location.href = "https://ingridchu.netlify.app";
+        }
+    </script>
 </head>
 <body>
-    <p>If you are not redirected automatically, follow this <a href='https://ingridchu.netlify.app'>link</a>.</p>
+    <p>If you are not redirected automatically, follow the appropriate link:</p>
+    <ul>
+        <li><a href="https://ingridchu.netlify.app">Web Version</a></li>
+        <li><a href="https://mobile-ingridchu.netlify.app">Mobile Version</a></li>
+    </ul>
 </body>
 </html>
